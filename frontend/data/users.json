@@ -1,0 +1,17 @@
+[
+  { "user_id": 1, "name": "System Admin", "email": "admin@gymbook.local", "password": "admin123", "role": "admin", "status": "active", "created_at": "2026-01-05", "phone": "+91 90000 10001", "city": "Bengaluru" },
+  { "user_id": 2, "name": "Riya Sharma", "email": "riya.manager@gymbook.local", "password": "manager123", "role": "manager", "status": "active", "created_at": "2026-02-14", "phone": "+91 90000 10002", "city": "Bengaluru" },
+  { "user_id": 3, "name": "Arjun Mehta", "email": "arjun.manager@gymbook.local", "password": "manager123", "role": "manager", "status": "active", "created_at": "2026-03-01", "phone": "+91 90000 10003", "city": "Mumbai" },
+  { "user_id": 4, "name": "Neha Kapoor", "email": "neha@gymbook.local", "password": "customer123", "role": "customer", "status": "active", "created_at": "2026-03-12", "phone": "+91 90000 10004", "city": "Delhi" },
+  { "user_id": 5, "name": "Karan Patel", "email": "karan@gymbook.local", "password": "customer123", "role": "customer", "status": "active", "created_at": "2026-04-03", "phone": "+91 90000 10005", "city": "Ahmedabad" },
+  { "user_id": 6, "name": "Sneha Iyer", "email": "sneha.manager@gymbook.local", "password": "manager123", "role": "manager", "status": "pending", "created_at": "2026-04-18", "phone": "+91 90000 10006", "city": "Chennai" },
+  { "user_id": 7, "name": "Vikram Nair", "email": "vikram.manager@gymbook.local", "password": "manager123", "role": "manager", "status": "active", "created_at": "2026-02-22", "phone": "+91 90000 10007", "city": "Hyderabad" },
+  { "user_id": 8, "name": "Aisha Khan", "email": "aisha@gymbook.local", "password": "customer123", "role": "customer", "status": "active", "created_at": "2026-04-12", "phone": "+91 90000 10008", "city": "Mumbai" },
+  { "user_id": 9, "name": "Manav Gupta", "email": "manav@gymbook.local", "password": "customer123", "role": "customer", "status": "active", "created_at": "2026-04-16", "phone": "+91 90000 10009", "city": "Pune" },
+  { "user_id": 10, "name": "Priya Menon", "email": "priya@gymbook.local", "password": "customer123", "role": "customer", "status": "active", "created_at": "2026-04-21", "phone": "+91 90000 10010", "city": "Chennai" },
+  { "user_id": 11, "name": "Rahul Das", "email": "rahul@gymbook.local", "password": "customer123", "role": "customer", "status": "inactive", "created_at": "2026-03-26", "phone": "+91 90000 10011", "city": "Kolkata" },
+  { "user_id": 12, "name": "Meera Joshi", "email": "meera.manager@gymbook.local", "password": "manager123", "role": "manager", "status": "active", "created_at": "2026-05-02", "phone": "+91 90000 10012", "city": "Pune" },
+  { "user_id": 13, "name": "Sahil Verma", "email": "sahil@gymbook.local", "password": "customer123", "role": "customer", "status": "active", "created_at": "2026-05-04", "phone": "+91 90000 10013", "city": "Bengaluru" },
+  { "user_id": 14, "name": "Ananya Rao", "email": "ananya@gymbook.local", "password": "customer123", "role": "customer", "status": "active", "created_at": "2026-05-06", "phone": "+91 90000 10014", "city": "Hyderabad" },
+  { "user_id": 15, "name": "Ishaan Bedi", "email": "ishaan@gymbook.local", "password": "customer123", "role": "customer", "status": "active", "created_at": "2026-05-08", "phone": "+91 90000 10015", "city": "Delhi" }
+]

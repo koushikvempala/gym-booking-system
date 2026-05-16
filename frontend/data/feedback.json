@@ -1,0 +1,12 @@
+[
+  { "feedback_id": 401, "user_id": 4, "message": "Booking was quick and the gym staff was helpful.", "rating": 5, "status": "new", "created_at": "2026-05-04" },
+  { "feedback_id": 402, "user_id": 5, "message": "Payment page needs clearer confirmation after success.", "rating": 3, "status": "reviewed", "created_at": "2026-05-06" },
+  { "feedback_id": 403, "user_id": 4, "message": "Please add more morning slots for personal training.", "rating": 4, "status": "new", "created_at": "2026-05-10" },
+  { "feedback_id": 404, "user_id": 8, "message": "FitNest Studio has clean equipment and good instructors.", "rating": 5, "status": "reviewed", "created_at": "2026-05-11" },
+  { "feedback_id": 405, "user_id": 9, "message": "The trainer assignment was useful for my transformation plan.", "rating": 5, "status": "new", "created_at": "2026-05-12" },
+  { "feedback_id": 406, "user_id": 10, "message": "Pending gym listings should show approval status clearly.", "rating": 4, "status": "new", "created_at": "2026-05-12" },
+  { "feedback_id": 407, "user_id": 13, "message": "The 12 Months - Without Trainer plan is good for office timings.", "rating": 5, "status": "reviewed", "created_at": "2026-05-13" },
+  { "feedback_id": 408, "user_id": 14, "message": "Please add UPI receipt download in the next version.", "rating": 4, "status": "new", "created_at": "2026-05-14" },
+  { "feedback_id": 409, "user_id": 15, "message": "Dashboard is simple to use and slot timing is accurate.", "rating": 5, "status": "reviewed", "created_at": "2026-05-15" },
+  { "feedback_id": 410, "user_id": 11, "message": "Need support for failed payment retry.", "rating": 2, "status": "new", "created_at": "2026-05-15" }
+]

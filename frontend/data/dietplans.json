@@ -1,0 +1,7 @@
+[
+  { "diet_id": 701, "plan_name": "Lean Muscle", "calories": 2200, "goal": "Muscle gain" },
+  { "diet_id": 702, "plan_name": "Fat Loss", "calories": 1600, "goal": "Weight loss" },
+  { "diet_id": 703, "plan_name": "Balanced Office Routine", "calories": 1900, "goal": "General wellness" },
+  { "diet_id": 704, "plan_name": "High Protein Vegetarian", "calories": 2100, "goal": "Strength training" },
+  { "diet_id": 705, "plan_name": "Endurance Support", "calories": 2400, "goal": "Cardio performance" }
+]

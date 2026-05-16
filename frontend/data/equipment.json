@@ -1,0 +1,8 @@
+[
+  { "equipment_id": 601, "gym_id": 101, "name": "Treadmill", "quantity": 8, "condition": "Good" },
+  { "equipment_id": 602, "gym_id": 102, "name": "Dumbbell Set", "quantity": 20, "condition": "Excellent" },
+  { "equipment_id": 603, "gym_id": 101, "name": "Squat Rack", "quantity": 4, "condition": "Excellent" },
+  { "equipment_id": 604, "gym_id": 105, "name": "Rowing Machine", "quantity": 6, "condition": "Good" },
+  { "equipment_id": 605, "gym_id": 106, "name": "Cable Crossover", "quantity": 3, "condition": "Good" },
+  { "equipment_id": 606, "gym_id": 108, "name": "Spin Bike", "quantity": 14, "condition": "Excellent" }
+]

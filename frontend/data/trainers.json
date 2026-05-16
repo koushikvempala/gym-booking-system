@@ -1,0 +1,12 @@
+[
+  { "trainer_id": 501, "gym_id": 101, "trainer_name": "Dev Singh", "specialization": "Strength Training", "experience_years": 6 },
+  { "trainer_id": 502, "gym_id": 102, "trainer_name": "Maya Rao", "specialization": "Yoga and Mobility", "experience_years": 5 },
+  { "trainer_id": 503, "gym_id": 101, "trainer_name": "Kabir Khan", "specialization": "Weight Loss", "experience_years": 4 },
+  { "trainer_id": 504, "gym_id": 105, "trainer_name": "Nitin Reddy", "specialization": "Functional Fitness", "experience_years": 7 },
+  { "trainer_id": 505, "gym_id": 106, "trainer_name": "Pooja Kulkarni", "specialization": "Body Recomposition", "experience_years": 6 },
+  { "trainer_id": 506, "gym_id": 108, "trainer_name": "Sameer Ali", "specialization": "Sports Conditioning", "experience_years": 8 },
+  { "trainer_id": 507, "gym_id": 102, "trainer_name": "Tanvi Shah", "specialization": "Pilates", "experience_years": 5 },
+  { "trainer_id": 508, "gym_id": 105, "trainer_name": "Rohan Iyer", "specialization": "Corporate Wellness", "experience_years": 4 },
+  { "trainer_id": 509, "gym_id": 106, "trainer_name": "Ira Sen", "specialization": "Nutrition Coaching", "experience_years": 3 },
+  { "trainer_id": 510, "gym_id": 101, "trainer_name": "Aditya Bose", "specialization": "Powerlifting", "experience_years": 9 }
+]
