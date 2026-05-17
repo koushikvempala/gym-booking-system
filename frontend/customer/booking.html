@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Booking</title>
+    <link rel="stylesheet" href="css/customer.css">
+</head>
+
+<body>
+
+    <h1 class="title">Complete Your Booking</h1>
+
+    <div class="booking-container">
+
+        <h2>Select Membership Plan</h2>
+        <div id="planList" class="grid"></div>
+
+        <h2>Select Slot</h2>
+        <div id="slotList" class="grid"></div>
+
+        <div class="summary-box">
+            <h3>Booking Summary</h3>
+            <p id="summaryPlan">Plan: Not selected</p>
+            <p id="summarySlot">Slot: Not selected</p>
+            <p id="summaryPrice">Price: -</p>
+        </div>
+
+        <div class="payment-section">
+            <button onclick="makePayment()">Proceed to Payment</button>
+        </div>
+
+    </div>
+
+    <script src="js/booking.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>GymBook Home</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ===== GLOBAL ===== */
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f7fb;
+        }
+
+        /* ===== NAVBAR ===== */
+
+        .navbar {
+            background: #111;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        .nav-links a:hover {
+            color: #00c6ff;
+        }
+
+        .profile-icon {
+            background: #007bff;
+            padding: 10px;
+            border-radius: 50%;
+            color: white;
+        }
+
+        /* ===== HERO ===== */
+
+        .hero {
+            background:
+                linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438');
+
+            background-size: cover;
+            background-position: center;
+
+            color: white;
+            text-align: center;
+
+            padding: 120px 20px;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 25px;
+        }
+
+        .hero button {
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            background: #00c6ff;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        /* ===== FEATURES ===== */
+
+        .features {
+            padding: 60px 20px;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(240px, 1fr));
+
+            gap: 25px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .feature-card i {
+            font-size: 45px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+
+        /* ===== GYMS ===== */
+
+        .top-gyms {
+            padding: 20px;
+        }
+
+        .top-gyms h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .gym-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .gym-card {
+            background: white;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .gym-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .gym-info {
+            padding: 20px;
+        }
+
+        .gym-info h3 {
+            margin: 0 0 10px;
+        }
+
+        .gym-info p {
+            color: #555;
+        }
+
+        .gym-info button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ===== MEMBERSHIP ===== */
+
+        .membership-box {
+            margin: 60px 20px;
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            padding: 50px 20px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .membership-box h2 {
+            font-size: 38px;
+        }
+
+        .membership-box p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.8;
+        }
+
+        /* ===== FOOTER ===== */
+
+        .footer {
+            background: #111;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid #333;
+        }
+
+        /* ===== MOBILE ===== */
+
+        @media(max-width:768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ===== NAVBAR ===== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-dumbbell"></i>
+            GymBook
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gyms.html">Gyms</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+            <li>
+                <a href="profile.html" class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- ===== HERO ===== -->
+
+    <section class="hero">
+
+        <h1>Transform Your Fitness Journey</h1>
+
+        <p>
+            Discover gyms, trainers and memberships
+            with GymBook
+        </p>
+
+        <button onclick="location.href='gyms.html'">
+            Explore Gyms
+        </button>
+
+    </section>
+
+    <!-- ===== FEATURES ===== -->
+
+    <section class="features">
+
+        <div class="feature-card">
+            <i class="fa-solid fa-dumbbell"></i>
+            <h3>Top Gyms</h3>
+            <p>Find the best fitness centers nearby</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-calendar-check"></i>
+            <h3>Easy Booking</h3>
+            <p>Book workout slots instantly</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-user-group"></i>
+            <h3>Expert Trainers</h3>
+            <p>Professional trainers available</p>
+        </div>
+
+        <div class="feature-card">
+            <i class="fa-solid fa-crown"></i>
+            <h3>Membership Plans</h3>
+            <p>Flexible monthly and yearly plans</p>
+        </div>
+
+    </section>
+
+    <!-- ===== TOP GYMS ===== -->
+
+    <section class="top-gyms">
+
+        <h2>Popular Gyms</h2>
+
+        <div class="gym-grid">
+
+            <div class="gym-card">
+
+                <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48">
+
+                <div class="gym-info">
+
+                    <h3>Iron Pulse Fitness</h3>
+
+                    <p>Premium equipment and trainers</p>
+
+                    <button>View Gym</button>
+
+                </div>
+
+            </div>
+
+            <div class="gym-card">
+
+                <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f">
+
+                <div class="gym-info">
+
+                    <h3>Power House Gym</h3>
+
+                    <p>Affordable memberships available</p>
+
+                    <button>View Gym</button>
+
+                </div>
+
+            </div>
+
+            <div class="gym-card">
+
+                <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a">
+
+                <div class="gym-info">
+
+                    <h3>Elite Fitness Studio</h3>
+
+                    <p>Personal training and yoga sessions</p>
+
+                    <button>View Gym</button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===== MEMBERSHIP ===== -->
+
+    <section class="membership-box">
+
+        <h2>Premium Membership Plans</h2>
+
+        <p>
+            Choose flexible fitness memberships with
+            trainer access, workout slots and premium
+            gym facilities.
+        </p>
+
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+                <h3>GymBook</h3>
+                <p>Your fitness journey starts here</p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+
+                <p><a href="home.html">Home</a></p>
+                <p><a href="gyms.html">Gyms</a></p>
+                <p><a href="membership.html">Membership</a></p>
+            </div>
+
+            <div>
+                <h4>Support</h4>
+
+                <p>Email: support@gymbook.com</p>
+                <p>Phone: +91 9876543210</p>
+            </div>
+
+        </div>
+
+        <p class="footer-bottom">
+            © 2026 GymBook. All Rights Reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

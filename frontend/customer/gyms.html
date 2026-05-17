@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Browse Gyms</title>
+    <link rel="stylesheet" href="./css/customer.css">
+</head>
+
+<body>
+
+    <h1 class="title">Find Gyms Near You</h1>
+
+    <!-- LOCATION FILTER -->
+    <div class="filter-box">
+        <label>Select Location:</label>
+        <select id="locationSelect" onchange="filterGyms()">
+            <option value="all">All Locations</option>
+        </select>
+    </div>
+
+    <!-- GYM LIST -->
+    <div id="gymContainer" class="gym-container"></div>
+
+    <script src="js/gyms.js"></script>
+</body>
+
+</html>

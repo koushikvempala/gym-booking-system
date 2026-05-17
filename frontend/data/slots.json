@@ -1,0 +1,176 @@
+[
+    {
+        "slot_id": 1,
+        "gym_id": 101,
+        "slot_time": "06:00 AM - 07:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 2,
+        "gym_id": 101,
+        "slot_time": "07:00 AM - 08:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 3,
+        "gym_id": 101,
+        "slot_time": "08:00 AM - 09:00 AM",
+        "status": "booked"
+    },
+    {
+        "slot_id": 4,
+        "gym_id": 101,
+        "slot_time": "06:00 PM - 07:00 PM",
+        "status": "available"
+    },
+    {
+        "slot_id": 5,
+        "gym_id": 102,
+        "slot_time": "06:00 AM - 07:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 6,
+        "gym_id": 102,
+        "slot_time": "07:00 AM - 08:00 AM",
+        "status": "booked"
+    },
+    {
+        "slot_id": 7,
+        "gym_id": 102,
+        "slot_time": "06:00 PM - 07:00 PM",
+        "status": "available"
+    },
+    {
+        "slot_id": 8,
+        "gym_id": 102,
+        "slot_time": "08:00 PM - 09:00 PM",
+        "status": "available"
+    },
+    {
+        "slot_id": 9,
+        "gym_id": 103,
+        "slot_time": "06:00 AM - 07:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 10,
+        "gym_id": 103,
+        "slot_time": "07:00 AM - 08:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 11,
+        "gym_id": 103,
+        "slot_time": "05:00 PM - 06:00 PM",
+        "status": "available"
+    },
+    {
+        "slot_id": 12,
+        "gym_id": 104,
+        "slot_time": "06:00 AM - 07:00 AM",
+        "status": "booked"
+    },
+    {
+        "slot_id": 13,
+        "gym_id": 104,
+        "slot_time": "07:00 AM - 08:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 14,
+        "gym_id": 104,
+        "slot_time": "06:00 PM - 07:00 PM",
+        "status": "available"
+    },
+    {
+        "slot_id": 15,
+        "gym_id": 105,
+        "slot_time": "05:00 AM - 06:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 16,
+        "gym_id": 105,
+        "slot_time": "06:00 AM - 07:00 AM",
+        "status": "booked"
+    },
+    {
+        "slot_id": 17,
+        "gym_id": 105,
+        "slot_time": "07:00 PM - 08:00 PM",
+        "status": "available"
+    },
+    {
+        "slot_id": 18,
+        "gym_id": 105,
+        "slot_time": "08:00 PM - 09:00 PM",
+        "status": "available"
+    },
+    {
+        "slot_id": 19,
+        "gym_id": 106,
+        "slot_time": "06:00 AM - 07:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 20,
+        "gym_id": 106,
+        "slot_time": "07:00 AM - 08:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 21,
+        "gym_id": 106,
+        "slot_time": "08:00 AM - 09:00 AM",
+        "status": "booked"
+    },
+    {
+        "slot_id": 22,
+        "gym_id": 106,
+        "slot_time": "06:00 PM - 07:00 PM",
+        "status": "available"
+    },
+    {
+        "slot_id": 23,
+        "gym_id": 107,
+        "slot_time": "06:00 AM - 07:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 24,
+        "gym_id": 107,
+        "slot_time": "07:00 AM - 08:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 25,
+        "gym_id": 107,
+        "slot_time": "06:00 PM - 07:00 PM",
+        "status": "booked"
+    },
+    {
+        "slot_id": 26,
+        "gym_id": 108,
+        "slot_time": "05:00 AM - 06:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 27,
+        "gym_id": 108,
+        "slot_time": "06:00 AM - 07:00 AM",
+        "status": "booked"
+    },
+    {
+        "slot_id": 28,
+        "gym_id": 108,
+        "slot_time": "07:00 AM - 08:00 AM",
+        "status": "available"
+    },
+    {
+        "slot_id": 29,
+        "gym_id": 108,
+        "slot_time": "06:00 PM - 07:00 PM",
+        "status": "available"
+    }
+]

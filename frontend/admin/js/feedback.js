@@ -14,13 +14,13 @@ let users = [];
 let feedback = [];
 
 async function loadData(name) {
-  const saved = localStorage.getItem(`gymBookOffice.${name}`);
+  const saved = localStorage.getItem(`gymBookEnrollment.${name}`);
   if (saved) return JSON.parse(saved);
   try {
     const response = await fetch(`data/${name}.json`);
     if (!response.ok) throw new Error("Data unavailable");
     const data = await response.json();
-    localStorage.setItem(`gymBookOffice.${name}`, JSON.stringify(data));
+    localStorage.setItem(`gymBookEnrollment.${name}`, JSON.stringify(data));
     return data;
   } catch {
     return (window.GYM_BOOKING_DATA && window.GYM_BOOKING_DATA[name]) || fallback[name] || [];
@@ -28,7 +28,7 @@ async function loadData(name) {
 }
 
 function saveFeedback() {
-  localStorage.setItem("gymBookOffice.feedback", JSON.stringify(feedback));
+  localStorage.setItem("gymBookEnrollment.feedback", JSON.stringify(feedback));
 }
 
 function showNotice(message) {
@@ -99,4 +99,5 @@ Promise.all([loadData("users"), loadData("feedback")]).then(([userData, feedback
   feedback = feedbackData;
   renderFeedback();
 });
+
 

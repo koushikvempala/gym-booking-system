@@ -5,7 +5,7 @@ const seed = {
   feedback: []
 };
 
-const storeKey = (name) => `gymBookOffice.${name}`;
+const storeKey = (name) => `gymBookEnrollment.${name}`;
 const money = (value) => `Rs ${Number(value || 0).toLocaleString("en-IN")}`;
 
 async function loadData(name) {
@@ -44,9 +44,9 @@ function renderBookings(bookings, users, gyms) {
   rows.innerHTML = bookings.slice(-7).reverse().map((booking) => `
     <tr>
       <td>#${booking.booking_id}</td>
-      <td>${names.get(booking.customer_id) || "Customer"}</td>
+      <td>${names.get(booking.manager_id || booking.customer_id) || "Manager"}</td>
       <td>${gymNames.get(booking.gym_id) || "Gym"}</td>
-      <td>${booking.membership_type}<br><small>${booking.booking_date || ""}</small></td>
+      <td>${booking.enrollment_plan}<br><small>Start: ${booking.booking_date || ""}</small></td>
       <td>${money(booking.total_amount)}<br><span class="badge ${booking.payment_status === "paid" ? "active" : "pending"}">${booking.payment_status || "paid"}</span></td>
     </tr>
   `).join("");
@@ -89,7 +89,7 @@ function renderHealth(gyms, bookings, feedback) {
   const avgRating = feedback.length ? feedback.reduce((sum, item) => sum + Number(item.rating || 0), 0) / feedback.length : 0;
   const score = Math.round(((approvedRatio * 0.35) + (paidRatio * 0.35) + ((avgRating / 5) * 0.30)) * 100);
   setText("healthScore", `${score}%`);
-  setText("healthText", score >= 80 ? "Strong platform activity with healthy payments and customer ratings." : "Good activity, with pending approvals and service follow-ups to monitor.");
+  setText("healthText", score >= 80 ? "Strong enrollment activity with healthy payments and gym approvals." : "Good activity, with pending approvals and enrollment follow-ups to monitor.");
   const ring = document.getElementById("healthScore");
   if (ring) ring.style.background = `conic-gradient(var(--success) 0 ${score}%, #e5edf0 ${score}% 100%)`;
 }
@@ -123,4 +123,5 @@ async function init() {
 }
 
 init();
+
 

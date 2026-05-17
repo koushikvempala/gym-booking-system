@@ -12,7 +12,7 @@
     <aside class="sidebar">
       <div class="brand"><div class="brand-mark">GB</div><div><h1>Gym Booking</h1><p>Admin Panel</p></div></div>
       <nav class="nav">
-        <a class="active" href="dashboard.html">Dashboard</a>
+        <a class="active" href="index.html">Dashboard</a>
         <a href="add-manager.html">Managers</a>
         <a href="manage-plans.html">Plans</a>
         <a href="feedback.html">Feedback</a>
@@ -22,17 +22,17 @@
     </aside>
     <main class="main">
       <header class="topbar">
-        <div class="page-title"><h2>Admin Dashboard</h2><p>Operational overview for gym approvals, memberships, payments, and customer feedback.</p></div>
+        <div class="page-title"><h2>Admin Dashboard</h2><p>Operational overview for gym approvals, manager enrollment plans, payments, and feedback.</p></div>
         <span class="admin-chip">Admin: admin@gymbook.local</span>
       </header>
       <section class="hero-panel">
         <article class="card summary-panel">
           <h3>Gym Booking System Control Center</h3>
-          <p>Monitor franchise onboarding, plan performance, revenue, bookings, and customer satisfaction from one admin workspace.</p>
+          <p>Monitor gym onboarding, manager enrollment plans, revenue, approvals, and feedback from one admin workspace.</p>
           <div class="summary-meta">
             <span id="liveDate">Updated today</span>
             <span>Admin operations</span>
-            <span>Membership control</span>
+            <span>Enrollment control</span>
           </div>
         </article>
         <article class="card health-panel">
@@ -48,7 +48,7 @@
       <section class="grid stats-grid">
         <article class="card stat"><span>Total Users</span><strong id="totalUsers">0</strong><small>Customers, managers, and admins</small></article>
         <article class="card stat"><span>Approved Gyms</span><strong id="approvedGyms">0</strong><small>Visible to customers</small></article>
-        <article class="card stat"><span>Total Revenue</span><strong id="totalRevenue">Rs 0</strong><small>Confirmed booking payments</small></article>
+        <article class="card stat"><span>Total Revenue</span><strong id="totalRevenue">Rs 0</strong><small>Confirmed enrollment payments</small></article>
         <article class="card stat"><span>Feedback Avg.</span><strong id="avgRating">0.0</strong><small>Customer rating score</small></article>
       </section>
       <section class="grid two-col" style="margin-top:18px">
@@ -58,16 +58,16 @@
             <div class="kpi-strip" style="margin-bottom:16px">
               <div><strong id="pendingGyms">0</strong><span>Pending gyms</span></div>
               <div><strong id="managerCount">0</strong><span>Managers</span></div>
-              <div><strong id="paidBookings">0</strong><span>Paid bookings</span></div>
+              <div><strong id="paidBookings">0</strong><span>Paid enrollments</span></div>
             </div>
             <div id="approvalBars" class="bar-list"></div>
           </div>
         </article>
         <article class="card">
-          <div class="card-header"><h3>Recent Bookings</h3><a class="btn secondary" href="reports.html">View Reports</a></div>
+          <div class="card-header"><h3>Recent Enrollments</h3><a class="btn secondary" href="reports.html">View Reports</a></div>
           <div class="table-wrap">
             <table class="table table-hover align-middle">
-              <thead><tr><th>ID</th><th>Customer</th><th>Gym</th><th>Plan</th><th>Amount</th></tr></thead>
+              <thead><tr><th>ID</th><th>Manager</th><th>Gym</th><th>Plan</th><th>Amount</th></tr></thead>
               <tbody id="recentBookings"></tbody>
             </table>
           </div>
@@ -89,5 +89,4 @@
   <script src="js/dashboard.js"></script>
 </body>
 </html>
-
 

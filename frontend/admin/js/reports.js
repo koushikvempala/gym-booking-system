@@ -2,8 +2,6 @@ const fallbackData = {
   users: [
     { user_id: 2, name: "Riya Sharma", role: "manager" },
     { user_id: 3, name: "Arjun Mehta", role: "manager" },
-    { user_id: 4, name: "Neha Kapoor", role: "customer" },
-    { user_id: 5, name: "Karan Patel", role: "customer" },
     { user_id: 6, name: "Sneha Iyer", role: "manager" }
   ],
   gyms: [
@@ -13,14 +11,9 @@ const fallbackData = {
     { gym_id: 104, manager_id: 2, gym_name: "FlexForge Arena", address: "Baner, Pune", description: "Crossfit, boxing, and conditioning programs.", status: "rejected" }
   ],
   bookings: [
-    { booking_id: 301, customer_id: 4, gym_id: 101, slot: "06:00 AM - 07:00 AM", membership_type: "3 Months - With Trainer", trainer_required: true, total_amount: 7999, payment_status: "paid" },
-    { booking_id: 302, customer_id: 5, gym_id: 102, slot: "07:00 PM - 08:00 PM", membership_type: "1 Month - Without Trainer", trainer_required: false, total_amount: 1499, payment_status: "paid" },
-    { booking_id: 303, customer_id: 4, gym_id: 101, slot: "08:00 AM - 09:00 AM", membership_type: "12 Months - With Trainer", trainer_required: true, total_amount: 19999, payment_status: "paid" }
-  ],
-  trainers: [
-    { trainer_id: 501, gym_id: 101, trainer_name: "Dev Singh" },
-    { trainer_id: 502, gym_id: 102, trainer_name: "Maya Rao" },
-    { trainer_id: 503, gym_id: 101, trainer_name: "Kabir Khan" }
+    { booking_id: 301, manager_id: 2, gym_id: 101, slot: "2026-06-01", enrollment_plan: "12 Months Gym Enrollment", total_amount: 7999, payment_status: "paid" },
+    { booking_id: 302, manager_id: 3, gym_id: 102, slot: "2026-08-03", enrollment_plan: "3 Months Gym Enrollment", total_amount: 2499, payment_status: "paid" },
+    { booking_id: 303, manager_id: 7, gym_id: 105, slot: "2026-11-08", enrollment_plan: "6 Months Gym Enrollment", total_amount: 4499, payment_status: "paid" }
   ]
 };
 
@@ -28,16 +21,15 @@ const money = (value) => `Rs ${Number(value || 0).toLocaleString("en-IN")}`;
 let users = [];
 let gyms = [];
 let bookings = [];
-let trainers = [];
 
 async function loadData(name) {
-  const saved = localStorage.getItem(`gymBookOffice.${name}`);
+  const saved = localStorage.getItem(`gymBookEnrollment.${name}`);
   if (saved) return JSON.parse(saved);
   try {
     const response = await fetch(`data/${name}.json`);
     if (!response.ok) throw new Error("Data unavailable");
     const data = await response.json();
-    localStorage.setItem(`gymBookOffice.${name}`, JSON.stringify(data));
+    localStorage.setItem(`gymBookEnrollment.${name}`, JSON.stringify(data));
     return data;
   } catch {
     return (window.GYM_BOOKING_DATA && window.GYM_BOOKING_DATA[name]) || fallbackData[name] || [];
@@ -45,7 +37,7 @@ async function loadData(name) {
 }
 
 function saveGyms() {
-  localStorage.setItem("gymBookOffice.gyms", JSON.stringify(gyms));
+  localStorage.setItem("gymBookEnrollment.gyms", JSON.stringify(gyms));
 }
 
 function showNotice(message) {
@@ -82,7 +74,7 @@ function renderReports() {
   setText("bookingCount", bookings.length);
   setText("revenueTotal", money(revenue));
   setText("managerCount", users.filter((user) => user.role === "manager").length);
-  setText("trainerCount", trainers.length);
+  setText("trainerCount", gyms.filter((gym) => gym.status === "approved").length);
 
   const revenueByGym = gyms.map((gym) => {
       const value = bookings.filter((booking) => booking.gym_id === gym.gym_id && booking.payment_status === "paid").reduce((sum, booking) => sum + Number(booking.total_amount || 0), 0);
@@ -90,9 +82,9 @@ function renderReports() {
   });
   renderBars("revenueBars", revenueByGym);
 
-  const planCounts = [...new Set(bookings.map((booking) => booking.membership_type))].map((plan) => ({
+  const planCounts = [...new Set(bookings.map((booking) => booking.enrollment_plan))].map((plan) => ({
     label: plan,
-    value: bookings.filter((booking) => booking.membership_type === plan).length
+    value: bookings.filter((booking) => booking.enrollment_plan === plan).length
   }));
   renderBars("planBars", planCounts);
 
@@ -101,11 +93,11 @@ function renderReports() {
     rows.innerHTML = bookings.map((booking) => `
       <tr>
         <td>#${booking.booking_id}</td>
-        <td>${userNames.get(booking.customer_id) || "Customer"}</td>
+        <td>${userNames.get(booking.manager_id || booking.customer_id) || "Manager"}</td>
         <td>${gymNames.get(booking.gym_id) || "Gym"}</td>
-        <td>${booking.slot}</td>
-        <td>${booking.membership_type}</td>
-        <td>${booking.trainer_required ? "Yes" : "No"}</td>
+        <td>${booking.booking_date || ""}</td>
+        <td>${booking.slot || ""}</td>
+        <td>${booking.enrollment_plan}</td>
         <td><span class="badge ${booking.payment_status === "paid" ? "active" : booking.payment_status === "failed" ? "rejected" : "pending"}">${booking.payment_status || "paid"}</span></td>
         <td>${money(booking.total_amount)}</td>
       </tr>
@@ -154,10 +146,11 @@ function bindGymApprovals() {
   document.getElementById("statusFilter").addEventListener("change", renderGymApprovals);
 }
 
-Promise.all([loadData("users"), loadData("gyms"), loadData("bookings"), loadData("trainers")]).then((data) => {
-  [users, gyms, bookings, trainers] = data;
+Promise.all([loadData("users"), loadData("gyms"), loadData("bookings")]).then((data) => {
+  [users, gyms, bookings] = data;
   renderReports();
   bindGymApprovals();
   renderGymApprovals();
 });
+
 

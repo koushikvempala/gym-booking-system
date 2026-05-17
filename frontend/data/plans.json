@@ -1,50 +1,37 @@
 [
   {
     "plan_id": 201,
-    "plan_name": "1 Month - Without Trainer",
+    "plan_name": "1 Month Gym Enrollment",
     "duration": "1 Month",
-    "price": 1499,
-    "trainer_included": false,
-    "features": "Gym access, locker access, group classes"
+    "price": 999,
+    "features": "Gym listing, manager dashboard access, approval support, basic visibility"
   },
   {
     "plan_id": 202,
-    "plan_name": "3 Months - Without Trainer",
+    "plan_name": "3 Months Gym Enrollment",
     "duration": "3 Months",
-    "price": 3999,
-    "trainer_included": false,
-    "features": "Gym access, locker access, group classes, monthly assessment"
+    "price": 2499,
+    "features": "Gym listing, dashboard access, approval support, priority visibility"
   },
   {
     "plan_id": 203,
-    "plan_name": "12 Months - Without Trainer",
-    "duration": "12 Months",
-    "price": 11999,
-    "trainer_included": false,
-    "features": "Annual gym access, locker access, group classes, quarterly assessment"
+    "plan_name": "6 Months Gym Enrollment",
+    "duration": "6 Months",
+    "price": 4499,
+    "features": "Gym listing, dashboard access, priority visibility, monthly performance summary"
   },
   {
     "plan_id": 204,
-    "plan_name": "1 Month - With Trainer",
-    "duration": "1 Month",
-    "price": 2999,
-    "trainer_included": true,
-    "features": "Gym access, personal trainer, fitness assessment, diet guidance"
+    "plan_name": "9 Months Gym Enrollment",
+    "duration": "9 Months",
+    "price": 6499,
+    "features": "Gym listing, priority visibility, manager analytics, extended approval support"
   },
   {
     "plan_id": 205,
-    "plan_name": "3 Months - With Trainer",
-    "duration": "3 Months",
-    "price": 7999,
-    "trainer_included": true,
-    "features": "Gym access, personal trainer, progress tracking, diet plan"
-  },
-  {
-    "plan_id": 206,
-    "plan_name": "12 Months - With Trainer",
+    "plan_name": "12 Months Gym Enrollment",
     "duration": "12 Months",
-    "price": 19999,
-    "trainer_included": true,
-    "features": "Annual gym access, personal trainer, priority slots, advanced diet plan"
+    "price": 7999,
+    "features": "Annual gym listing, premium visibility, manager analytics, renewal support"
   }
 ]
