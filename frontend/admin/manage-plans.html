@@ -12,26 +12,26 @@
     <aside class="sidebar">
       <div class="brand"><div class="brand-mark">GB</div><div><h1>Gym Booking</h1><p>Admin Panel</p></div></div>
       <nav class="nav">
-        <a href="dashboard.html">Dashboard</a><a href="add-manager.html">Managers</a><a class="active" href="manage-plans.html">Plans</a><a href="feedback.html">Feedback</a><a href="gym-approvals.html">Gym Approvals</a><a href="reports.html">Reports</a>
+        <a href="index.html">Dashboard</a><a href="add-manager.html">Managers</a><a class="active" href="manage-plans.html">Plans</a><a href="feedback.html">Feedback</a><a href="gym-approvals.html">Gym Approvals</a><a href="reports.html">Reports</a>
       </nav>
     </aside>
     <main class="main">
-      <header class="topbar"><div class="page-title"><h2>Manage Plans</h2><p>Maintain official membership plans with and without trainer support.</p></div><span class="admin-chip">Membership Administration</span></header>
+      <header class="topbar"><div class="page-title"><h2>Manage Plans</h2><p>Maintain official gym enrollment plans for managers.</p></div><span class="admin-chip">Enrollment Administration</span></header>
       <div id="notice" class="notice"></div>
       <section class="grid two-col">
         <form id="planForm" class="card">
           <div class="card-header"><h3>Plan Form</h3></div>
           <div class="card-body">
             <input type="hidden" id="planId">
-            <div class="field"><label for="planName">Plan Name</label><select id="planName" required><option value="">Select plan</option><option>1 Month - Without Trainer</option><option>3 Months - Without Trainer</option><option>12 Months - Without Trainer</option><option>1 Month - With Trainer</option><option>3 Months - With Trainer</option><option>12 Months - With Trainer</option></select></div>
-            <div class="field"><label for="duration">Duration</label><select id="duration" required><option value="">Select duration</option><option>1 Month</option><option>3 Months</option><option>12 Months</option></select></div>
-            <div class="field"><label for="price">Price</label><input id="price" type="number" min="1" required placeholder="1499"></div>
-            <div class="field"><label for="features">Features</label><textarea id="features" required placeholder="Gym access, trainer consult"></textarea></div>
+            <div class="field"><label for="planName">Plan Name</label><select id="planName" required><option value="">Select plan</option><option>1 Month Gym Enrollment</option><option>3 Months Gym Enrollment</option><option>6 Months Gym Enrollment</option><option>9 Months Gym Enrollment</option><option>12 Months Gym Enrollment</option></select></div>
+            <div class="field"><label for="duration">Duration</label><select id="duration" required><option value="">Select duration</option><option>1 Month</option><option>3 Months</option><option>6 Months</option><option>9 Months</option><option>12 Months</option></select></div>
+            <div class="field"><label for="price">Price</label><input id="price" type="number" min="1" required placeholder="999"></div>
+            <div class="field"><label for="features">Features</label><textarea id="features" required placeholder="Gym listing, manager dashboard access, approval support"></textarea></div>
             <div class="actions"><button class="btn" type="submit">Save Plan</button><button class="btn secondary" type="button" id="resetForm">Clear</button></div>
           </div>
         </form>
         <article class="card">
-          <div class="card-header"><h3>Membership Plans</h3></div>
+          <div class="card-header"><h3>Gym Enrollment Plans</h3></div>
           <div class="table-wrap"><table class="table table-hover align-middle"><thead><tr><th>Plan</th><th>Duration</th><th>Price</th><th>Features</th><th>Actions</th></tr></thead><tbody id="planRows"></tbody></table></div>
         </article>
       </section>
@@ -41,5 +41,4 @@
   <script src="js/plans.js"></script>
 </body>
 </html>
-
 

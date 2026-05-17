@@ -1,32 +1,30 @@
 const fallbackPlans = [
-  { plan_id: 201, plan_name: "1 Month - Without Trainer", duration: "1 Month", price: 1499, trainer_included: false, features: "Gym access, locker access, group classes" },
-  { plan_id: 202, plan_name: "3 Months - Without Trainer", duration: "3 Months", price: 3999, trainer_included: false, features: "Gym access, locker access, group classes, monthly assessment" },
-  { plan_id: 203, plan_name: "12 Months - Without Trainer", duration: "12 Months", price: 11999, trainer_included: false, features: "Annual gym access, locker access, group classes, quarterly assessment" },
-  { plan_id: 204, plan_name: "1 Month - With Trainer", duration: "1 Month", price: 2999, trainer_included: true, features: "Gym access, personal trainer, fitness assessment, diet guidance" },
-  { plan_id: 205, plan_name: "3 Months - With Trainer", duration: "3 Months", price: 7999, trainer_included: true, features: "Gym access, personal trainer, progress tracking, diet plan" },
-  { plan_id: 206, plan_name: "12 Months - With Trainer", duration: "12 Months", price: 19999, trainer_included: true, features: "Annual gym access, personal trainer, priority slots, advanced diet plan" }
+  { plan_id: 201, plan_name: "1 Month Gym Enrollment", duration: "1 Month", price: 999, features: "Gym listing, manager dashboard access, approval support, basic visibility" },
+  { plan_id: 202, plan_name: "3 Months Gym Enrollment", duration: "3 Months", price: 2499, features: "Gym listing, dashboard access, approval support, priority visibility" },
+  { plan_id: 203, plan_name: "6 Months Gym Enrollment", duration: "6 Months", price: 4499, features: "Gym listing, dashboard access, priority visibility, monthly performance summary" },
+  { plan_id: 204, plan_name: "9 Months Gym Enrollment", duration: "9 Months", price: 6499, features: "Gym listing, priority visibility, manager analytics, extended approval support" },
+  { plan_id: 205, plan_name: "12 Months Gym Enrollment", duration: "12 Months", price: 7999, features: "Annual gym listing, premium visibility, manager analytics, renewal support" }
 ];
 
 const allowedPlans = {
-  "1 Month - Without Trainer": { duration: "1 Month", trainer_included: false },
-  "3 Months - Without Trainer": { duration: "3 Months", trainer_included: false },
-  "12 Months - Without Trainer": { duration: "12 Months", trainer_included: false },
-  "1 Month - With Trainer": { duration: "1 Month", trainer_included: true },
-  "3 Months - With Trainer": { duration: "3 Months", trainer_included: true },
-  "12 Months - With Trainer": { duration: "12 Months", trainer_included: true }
+  "1 Month Gym Enrollment": { duration: "1 Month" },
+  "3 Months Gym Enrollment": { duration: "3 Months" },
+  "6 Months Gym Enrollment": { duration: "6 Months" },
+  "9 Months Gym Enrollment": { duration: "9 Months" },
+  "12 Months Gym Enrollment": { duration: "12 Months" }
 };
 
 let plans = [];
 const money = (value) => `Rs ${Number(value || 0).toLocaleString("en-IN")}`;
 
 async function loadPlans() {
-  const saved = localStorage.getItem("gymBookOffice.plans");
+  const saved = localStorage.getItem("gymBookEnrollment.plans");
   if (saved) return JSON.parse(saved);
   try {
     const response = await fetch("data/plans.json");
     if (!response.ok) throw new Error("Data unavailable");
     const data = await response.json();
-    localStorage.setItem("gymBookOffice.plans", JSON.stringify(data));
+    localStorage.setItem("gymBookEnrollment.plans", JSON.stringify(data));
     return data;
   } catch {
     return (window.GYM_BOOKING_DATA && window.GYM_BOOKING_DATA.plans) || fallbackPlans;
@@ -34,7 +32,7 @@ async function loadPlans() {
 }
 
 function savePlans() {
-  localStorage.setItem("gymBookOffice.plans", JSON.stringify(plans));
+  localStorage.setItem("gymBookEnrollment.plans", JSON.stringify(plans));
 }
 
 function showNotice(message) {
@@ -46,11 +44,11 @@ function showNotice(message) {
 
 function validatePlan(payload, planId) {
   const allowed = allowedPlans[payload.plan_name];
-  if (!allowed) return "Select one of the six official membership plans.";
-  if (allowed.duration !== payload.duration) return "Plan duration must match the selected plan name.";
+  if (!allowed) return "Select one of the five official gym enrollment plans.";
+  if (allowed.duration !== payload.duration) return "Plan duration must match the selected enrollment plan.";
   if (!Number.isFinite(payload.price) || payload.price < 500) return "Plan price must be at least Rs 500.";
   if (payload.features.length < 15) return "Add clear plan features with at least 15 characters.";
-  if (plans.some((plan) => plan.plan_name === payload.plan_name && plan.plan_id !== planId)) return "This plan already exists.";
+  if (plans.some((plan) => plan.plan_name === payload.plan_name && plan.plan_id !== planId)) return "This enrollment plan already exists.";
   return "";
 }
 
@@ -80,7 +78,6 @@ document.getElementById("planForm").addEventListener("submit", (event) => {
     plan_name: document.getElementById("planName").value.trim(),
     duration: document.getElementById("duration").value.trim(),
     price: Number(document.getElementById("price").value),
-    trainer_included: allowedPlans[document.getElementById("planName").value]?.trainer_included || false,
     features: document.getElementById("features").value.trim()
   };
   const error = validatePlan(payload, planId);
@@ -90,10 +87,10 @@ document.getElementById("planForm").addEventListener("submit", (event) => {
   }
   if (planId) {
     plans = plans.map((plan) => plan.plan_id === planId ? payload : plan);
-    showNotice("Plan updated.");
+    showNotice("Enrollment plan updated.");
   } else {
     plans.push(payload);
-    showNotice("Plan added.");
+    showNotice("Enrollment plan added.");
   }
   savePlans();
   resetForm();
@@ -117,6 +114,7 @@ document.getElementById("planName").addEventListener("change", (event) => {
   const selected = allowedPlans[event.target.value];
   if (selected) document.getElementById("duration").value = selected.duration;
 });
+
 loadPlans().then((data) => {
   plans = data;
   renderPlans();

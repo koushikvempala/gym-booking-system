@@ -22,7 +22,7 @@ window.GYM_BOOKING_DATA = {
   { "gym_id": 102, "manager_id": 3, "gym_name": "FitNest Studio", "address": "Andheri West, Mumbai", "description": "Boutique gym with yoga, pilates, HIIT, and functional training.", "status": "approved", "monthly_revenue": 164200, "members": 196, "rating": 4.5, "opened_on": "2025-12-18" },
   { "gym_id": 103, "manager_id": 6, "gym_name": "CoreLab Gym", "address": "Anna Nagar, Chennai", "description": "New manager enrollment with strength and transformation programs.", "status": "pending", "monthly_revenue": 0, "members": 0, "rating": 0, "opened_on": "2026-05-11" },
   { "gym_id": 104, "manager_id": 2, "gym_name": "FlexForge Arena", "address": "Baner, Pune", "description": "Crossfit, boxing, and conditioning programs.", "status": "rejected", "monthly_revenue": 0, "members": 0, "rating": 0, "opened_on": "2026-04-25" },
-  { "gym_id": 105, "manager_id": 7, "gym_name": "Velocity Fitness Club", "address": "Hitech City, Hyderabad", "description": "Corporate fitness center with evening slots and trainer-led programs.", "status": "approved", "monthly_revenue": 148700, "members": 171, "rating": 4.6, "opened_on": "2026-01-20" },
+  { "gym_id": 105, "manager_id": 7, "gym_name": "Velocity Fitness Club", "address": "Hitech City, Hyderabad", "description": "Corporate fitness center with premium enrollment and evening slots.", "status": "approved", "monthly_revenue": 148700, "members": 171, "rating": 4.6, "opened_on": "2026-01-20" },
   { "gym_id": 106, "manager_id": 12, "gym_name": "Urban Lift House", "address": "Koregaon Park, Pune", "description": "Modern lifting studio with mobility, nutrition, and recovery support.", "status": "approved", "monthly_revenue": 121900, "members": 139, "rating": 4.4, "opened_on": "2026-02-28" },
   { "gym_id": 107, "manager_id": 3, "gym_name": "PeakForm Elite", "address": "Powai, Mumbai", "description": "Premium transformation center awaiting document verification.", "status": "pending", "monthly_revenue": 0, "members": 0, "rating": 0, "opened_on": "2026-05-09" },
   { "gym_id": 108, "manager_id": 7, "gym_name": "NorthStar Wellness", "address": "Indiranagar, Bengaluru", "description": "Wellness-focused gym with yoga, strength, and physiotherapy support.", "status": "approved", "monthly_revenue": 98300, "members": 114, "rating": 4.3, "opened_on": "2026-03-15" }
@@ -31,83 +31,66 @@ window.GYM_BOOKING_DATA = {
   plans: [
   {
     "plan_id": 201,
-    "plan_name": "1 Month - Without Trainer",
+    "plan_name": "1 Month Gym Enrollment",
     "duration": "1 Month",
-    "price": 1499,
-    "trainer_included": false,
-    "features": "Gym access, locker access, group classes"
+    "price": 999,
+    "features": "Gym listing, manager dashboard access, approval support, basic visibility"
   },
   {
     "plan_id": 202,
-    "plan_name": "3 Months - Without Trainer",
+    "plan_name": "3 Months Gym Enrollment",
     "duration": "3 Months",
-    "price": 3999,
-    "trainer_included": false,
-    "features": "Gym access, locker access, group classes, monthly assessment"
+    "price": 2499,
+    "features": "Gym listing, dashboard access, approval support, priority visibility"
   },
   {
     "plan_id": 203,
-    "plan_name": "12 Months - Without Trainer",
-    "duration": "12 Months",
-    "price": 11999,
-    "trainer_included": false,
-    "features": "Annual gym access, locker access, group classes, quarterly assessment"
+    "plan_name": "6 Months Gym Enrollment",
+    "duration": "6 Months",
+    "price": 4499,
+    "features": "Gym listing, dashboard access, priority visibility, monthly performance summary"
   },
   {
     "plan_id": 204,
-    "plan_name": "1 Month - With Trainer",
-    "duration": "1 Month",
-    "price": 2999,
-    "trainer_included": true,
-    "features": "Gym access, personal trainer, fitness assessment, diet guidance"
+    "plan_name": "9 Months Gym Enrollment",
+    "duration": "9 Months",
+    "price": 6499,
+    "features": "Gym listing, priority visibility, manager analytics, extended approval support"
   },
   {
     "plan_id": 205,
-    "plan_name": "3 Months - With Trainer",
-    "duration": "3 Months",
-    "price": 7999,
-    "trainer_included": true,
-    "features": "Gym access, personal trainer, progress tracking, diet plan"
-  },
-  {
-    "plan_id": 206,
-    "plan_name": "12 Months - With Trainer",
+    "plan_name": "12 Months Gym Enrollment",
     "duration": "12 Months",
-    "price": 19999,
-    "trainer_included": true,
-    "features": "Annual gym access, personal trainer, priority slots, advanced diet plan"
+    "price": 7999,
+    "features": "Annual gym listing, premium visibility, manager analytics, renewal support"
   }
 ]
 ,
   bookings: [
-  { "booking_id": 301, "customer_id": 4, "gym_id": 101, "slot": "06:00 AM - 07:00 AM", "membership_type": "3 Months - With Trainer", "trainer_required": true, "total_amount": 7999, "booking_date": "2026-05-01", "payment_status": "paid" },
-  { "booking_id": 302, "customer_id": 5, "gym_id": 102, "slot": "07:00 PM - 08:00 PM", "membership_type": "1 Month - Without Trainer", "trainer_required": false, "total_amount": 1499, "booking_date": "2026-05-03", "payment_status": "paid" },
-  { "booking_id": 303, "customer_id": 4, "gym_id": 101, "slot": "08:00 AM - 09:00 AM", "membership_type": "12 Months - With Trainer", "trainer_required": true, "total_amount": 19999, "booking_date": "2026-05-08", "payment_status": "paid" },
-  { "booking_id": 304, "customer_id": 8, "gym_id": 102, "slot": "06:00 PM - 07:00 PM", "membership_type": "12 Months - Without Trainer", "trainer_required": false, "total_amount": 11999, "booking_date": "2026-05-09", "payment_status": "paid" },
-  { "booking_id": 305, "customer_id": 9, "gym_id": 106, "slot": "07:00 AM - 08:00 AM", "membership_type": "3 Months - With Trainer", "trainer_required": true, "total_amount": 7999, "booking_date": "2026-05-10", "payment_status": "paid" },
-  { "booking_id": 306, "customer_id": 10, "gym_id": 103, "slot": "05:00 PM - 06:00 PM", "membership_type": "1 Month - Without Trainer", "trainer_required": false, "total_amount": 1499, "booking_date": "2026-05-10", "payment_status": "pending" },
-  { "booking_id": 307, "customer_id": 13, "gym_id": 105, "slot": "08:00 PM - 09:00 PM", "membership_type": "1 Month - With Trainer", "trainer_required": true, "total_amount": 2999, "booking_date": "2026-05-11", "payment_status": "paid" },
-  { "booking_id": 308, "customer_id": 14, "gym_id": 105, "slot": "06:00 AM - 07:00 AM", "membership_type": "3 Months - Without Trainer", "trainer_required": false, "total_amount": 3999, "booking_date": "2026-05-11", "payment_status": "paid" },
-  { "booking_id": 309, "customer_id": 15, "gym_id": 101, "slot": "09:00 AM - 10:00 AM", "membership_type": "12 Months - Without Trainer", "trainer_required": false, "total_amount": 11999, "booking_date": "2026-05-12", "payment_status": "paid" },
-  { "booking_id": 310, "customer_id": 8, "gym_id": 107, "slot": "07:00 AM - 08:00 AM", "membership_type": "1 Month - Without Trainer", "trainer_required": false, "total_amount": 1499, "booking_date": "2026-05-12", "payment_status": "pending" },
-  { "booking_id": 311, "customer_id": 5, "gym_id": 108, "slot": "06:00 PM - 07:00 PM", "membership_type": "1 Month - With Trainer", "trainer_required": true, "total_amount": 2999, "booking_date": "2026-05-13", "payment_status": "paid" },
-  { "booking_id": 312, "customer_id": 9, "gym_id": 106, "slot": "07:00 PM - 08:00 PM", "membership_type": "12 Months - With Trainer", "trainer_required": true, "total_amount": 19999, "booking_date": "2026-05-13", "payment_status": "paid" },
-  { "booking_id": 313, "customer_id": 10, "gym_id": 102, "slot": "08:00 AM - 09:00 AM", "membership_type": "3 Months - With Trainer", "trainer_required": true, "total_amount": 7999, "booking_date": "2026-05-14", "payment_status": "paid" },
-  { "booking_id": 314, "customer_id": 13, "gym_id": 108, "slot": "05:00 PM - 06:00 PM", "membership_type": "1 Month - Without Trainer", "trainer_required": false, "total_amount": 1499, "booking_date": "2026-05-14", "payment_status": "paid" },
-  { "booking_id": 315, "customer_id": 14, "gym_id": 101, "slot": "06:00 AM - 07:00 AM", "membership_type": "3 Months - With Trainer", "trainer_required": true, "total_amount": 7999, "booking_date": "2026-05-15", "payment_status": "paid" },
-  { "booking_id": 316, "customer_id": 15, "gym_id": 105, "slot": "08:00 PM - 09:00 PM", "membership_type": "12 Months - Without Trainer", "trainer_required": false, "total_amount": 11999, "booking_date": "2026-05-15", "payment_status": "paid" },
-  { "booking_id": 317, "customer_id": 4, "gym_id": 106, "slot": "07:00 AM - 08:00 AM", "membership_type": "3 Months - Without Trainer", "trainer_required": false, "total_amount": 3999, "booking_date": "2026-05-15", "payment_status": "paid" },
-  { "booking_id": 318, "customer_id": 11, "gym_id": 102, "slot": "06:00 PM - 07:00 PM", "membership_type": "1 Month - Without Trainer", "trainer_required": false, "total_amount": 1499, "booking_date": "2026-05-15", "payment_status": "failed" }
+  { "booking_id": 301, "manager_id": 2, "gym_id": 101, "slot": "2026-06-01", "enrollment_plan": "12 Months Gym Enrollment", "total_amount": 7999, "booking_date": "2026-05-01", "payment_status": "paid" },
+  { "booking_id": 302, "manager_id": 3, "gym_id": 102, "slot": "2026-08-03", "enrollment_plan": "3 Months Gym Enrollment", "total_amount": 2499, "booking_date": "2026-05-03", "payment_status": "paid" },
+  { "booking_id": 303, "manager_id": 7, "gym_id": 105, "slot": "2026-11-08", "enrollment_plan": "6 Months Gym Enrollment", "total_amount": 4499, "booking_date": "2026-05-08", "payment_status": "paid" },
+  { "booking_id": 304, "manager_id": 12, "gym_id": 106, "slot": "2027-02-09", "enrollment_plan": "9 Months Gym Enrollment", "total_amount": 6499, "booking_date": "2026-05-09", "payment_status": "paid" },
+  { "booking_id": 305, "manager_id": 6, "gym_id": 103, "slot": "2026-06-10", "enrollment_plan": "1 Month Gym Enrollment", "total_amount": 999, "booking_date": "2026-05-10", "payment_status": "pending" },
+  { "booking_id": 306, "manager_id": 3, "gym_id": 107, "slot": "2026-06-10", "enrollment_plan": "1 Month Gym Enrollment", "total_amount": 999, "booking_date": "2026-05-10", "payment_status": "pending" },
+  { "booking_id": 307, "manager_id": 7, "gym_id": 108, "slot": "2027-05-11", "enrollment_plan": "12 Months Gym Enrollment", "total_amount": 7999, "booking_date": "2026-05-11", "payment_status": "paid" },
+  { "booking_id": 308, "manager_id": 2, "gym_id": 104, "slot": "2026-08-11", "enrollment_plan": "3 Months Gym Enrollment", "total_amount": 2499, "booking_date": "2026-05-11", "payment_status": "failed" },
+  { "booking_id": 309, "manager_id": 2, "gym_id": 101, "slot": "2027-05-12", "enrollment_plan": "12 Months Gym Enrollment", "total_amount": 7999, "booking_date": "2026-05-12", "payment_status": "paid" },
+  { "booking_id": 310, "manager_id": 12, "gym_id": 106, "slot": "2026-11-13", "enrollment_plan": "6 Months Gym Enrollment", "total_amount": 4499, "booking_date": "2026-05-13", "payment_status": "paid" },
+  { "booking_id": 311, "manager_id": 3, "gym_id": 102, "slot": "2027-02-14", "enrollment_plan": "9 Months Gym Enrollment", "total_amount": 6499, "booking_date": "2026-05-14", "payment_status": "paid" },
+  { "booking_id": 312, "manager_id": 7, "gym_id": 105, "slot": "2026-06-15", "enrollment_plan": "1 Month Gym Enrollment", "total_amount": 999, "booking_date": "2026-05-15", "payment_status": "paid" }
 ]
+
+
 ,
   feedback: [
-  { "feedback_id": 401, "user_id": 4, "message": "Booking was quick and the gym staff was helpful.", "rating": 5, "status": "new", "created_at": "2026-05-04" },
+  { "feedback_id": 401, "user_id": 4, "message": "Gym discovery and enrollment information was easy to understand.", "rating": 5, "status": "new", "created_at": "2026-05-04" },
   { "feedback_id": 402, "user_id": 5, "message": "Payment page needs clearer confirmation after success.", "rating": 3, "status": "reviewed", "created_at": "2026-05-06" },
   { "feedback_id": 403, "user_id": 4, "message": "Please add more morning slots for personal training.", "rating": 4, "status": "new", "created_at": "2026-05-10" },
   { "feedback_id": 404, "user_id": 8, "message": "FitNest Studio has clean equipment and good instructors.", "rating": 5, "status": "reviewed", "created_at": "2026-05-11" },
-  { "feedback_id": 405, "user_id": 9, "message": "The trainer assignment was useful for my transformation plan.", "rating": 5, "status": "new", "created_at": "2026-05-12" },
+  { "feedback_id": 405, "user_id": 9, "message": "The gym enrollment duration options are clear for managers.", "rating": 5, "status": "new", "created_at": "2026-05-12" },
   { "feedback_id": 406, "user_id": 10, "message": "Pending gym listings should show approval status clearly.", "rating": 4, "status": "new", "created_at": "2026-05-12" },
-  { "feedback_id": 407, "user_id": 13, "message": "The 12 Months - Without Trainer plan is good for office timings.", "rating": 5, "status": "reviewed", "created_at": "2026-05-13" },
+  { "feedback_id": 407, "user_id": 13, "message": "The 12 Months Gym Enrollment plan is useful for long-term gym listing.", "rating": 5, "status": "reviewed", "created_at": "2026-05-13" },
   { "feedback_id": 408, "user_id": 14, "message": "Please add UPI receipt download in the next version.", "rating": 4, "status": "new", "created_at": "2026-05-14" },
   { "feedback_id": 409, "user_id": 15, "message": "Dashboard is simple to use and slot timing is accurate.", "rating": 5, "status": "reviewed", "created_at": "2026-05-15" },
   { "feedback_id": 410, "user_id": 11, "message": "Need support for failed payment retry.", "rating": 2, "status": "new", "created_at": "2026-05-15" }

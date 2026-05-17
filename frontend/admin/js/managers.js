@@ -2,19 +2,19 @@ const fallbackUsers = [
   { user_id: 1, name: "System Admin", email: "admin@gymbook.local", password: "admin123", role: "admin", status: "active", created_at: "2026-01-05" },
   { user_id: 2, name: "Riya Sharma", email: "riya.manager@gymbook.local", password: "manager123", role: "manager", status: "active", created_at: "2026-02-14" },
   { user_id: 3, name: "Arjun Mehta", email: "arjun.manager@gymbook.local", password: "manager123", role: "manager", status: "active", created_at: "2026-03-01" },
-  // { user_id: 6, name: "Sneha Iyer", email: "sneha.manager@gymbook.local", password: "manager123", role: "manager", status: "pending", created_at: "2026-04-18" }
+  { user_id: 6, name: "Sneha Iyer", email: "sneha.manager@gymbook.local", password: "manager123", role: "manager", status: "pending", created_at: "2026-04-18" }
 ];
 
 let users = [];
 
 async function loadUsers() {
-  const saved = localStorage.getItem("gymBookOffice.users");
+  const saved = localStorage.getItem("gymBookEnrollment.users");
   if (saved) return JSON.parse(saved);
   try {
     const response = await fetch("data/users.json");
     if (!response.ok) throw new Error("Data unavailable");
     const data = await response.json();
-    localStorage.setItem("gymBookOffice.users", JSON.stringify(data));
+    localStorage.setItem("gymBookEnrollment.users", JSON.stringify(data));
     return data;
   } catch {
     return (window.GYM_BOOKING_DATA && window.GYM_BOOKING_DATA.users) || fallbackUsers;
@@ -22,7 +22,7 @@ async function loadUsers() {
 }
 
 function saveUsers() {
-  localStorage.setItem("gymBookOffice.users", JSON.stringify(users));
+  localStorage.setItem("gymBookEnrollment.users", JSON.stringify(users));
 }
 
 function showNotice(message) {
@@ -132,4 +132,5 @@ loadUsers().then((data) => {
   users = data;
   renderManagers();
 });
+
 
