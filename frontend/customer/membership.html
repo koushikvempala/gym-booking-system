@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Membership</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/customer.css">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            <i class="fa-solid fa-dumbbell"></i>
+            GymBook
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="home.html">Home</a></li>
+
+            <li><a href="gyms.html">Gyms</a></li>
+
+            <li><a href="about.html">About</a></li>
+
+            <li><a href="contact.html">Contact</a></li>
+
+            <li>
+                <a href="profile.html" class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- ================= MEMBERSHIP SECTION ================= -->
+
+    <section class="membership-page">
+
+        <h1>Your Membership</h1>
+
+        <!-- DYNAMIC MEMBERSHIP -->
+        <div id="membershipContainer"></div>
+
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+
+                <h3>GymBook</h3>
+
+                <p>
+                    Your complete fitness booking platform
+                    with gyms, trainers and memberships.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>Quick Links</h4>
+
+                <p><a href="home.html">Home</a></p>
+                <p><a href="gyms.html">Gyms</a></p>
+                <p><a href="about.html">About</a></p>
+
+            </div>
+
+            <div>
+
+                <h4>Support</h4>
+
+                <p>Email: support@gymbook.com</p>
+                <p>Phone: +91 9876543210</p>
+
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 GymBook. All Rights Reserved.
+        </div>
+
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        const booking =
+            JSON.parse(localStorage.getItem("latestBooking"));
+
+        const container =
+            document.getElementById("membershipContainer");
+
+        if (booking) {
+
+            // START DATE
+            const startDate = new Date(booking.date);
+
+            // EXPIRY DATE
+            const expiryDate = new Date(startDate);
+
+            // PLAN BASED EXPIRY
+            if (booking.plan.includes("1")) {
+
+                expiryDate.setMonth(
+                    expiryDate.getMonth() + 1);
+
+            }
+
+            else if (booking.plan.includes("3")) {
+
+                expiryDate.setMonth(
+                    expiryDate.getMonth() + 3);
+
+            }
+
+            else if (booking.plan.includes("6")) {
+
+                expiryDate.setMonth(
+                    expiryDate.getMonth() + 6);
+
+            }
+
+            else {
+
+                expiryDate.setFullYear(
+                    expiryDate.getFullYear() + 1);
+
+            }
+
+            // FORMAT DATE
+            const start =
+                startDate.toDateString();
+
+            const expiry =
+                expiryDate.toDateString();
+
+            // HTML
+            container.innerHTML = `
+
+  <div class="membership-user-card">
+
+    <div class="membership-top">
+
+      <div class="membership-plan">
+
+        <h2>${booking.plan}</h2>
+
+        <p class="active-status">
+          Active Membership
+        </p>
+
+      </div>
+
+      <i class="fa-solid fa-crown crown-icon"></i>
+
+    </div>
+
+    <div class="membership-details">
+
+      <div class="detail-box">
+        <h3>Selected Plan</h3>
+        <p>${booking.plan}</p>
+      </div>
+
+      <div class="detail-box">
+        <h3>Workout Slot</h3>
+        <p>${booking.slot}</p>
+      </div>
+
+      <div class="detail-box">
+        <h3>Amount Paid</h3>
+        <p>₹${booking.price}</p>
+      </div>
+
+      <div class="detail-box">
+        <h3>Start Date</h3>
+        <p>${start}</p>
+      </div>
+
+      <div class="detail-box">
+        <h3>Expiry Date</h3>
+        <p>${expiry}</p>
+      </div>
+
+      <div class="detail-box">
+        <h3>Status</h3>
+        <p>Active</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  `;
+
+        }
+
+        else {
+
+            container.innerHTML = `
+
+  <div class="membership-user-card">
+
+    <div class="no-membership">
+
+      <h2>No Membership Found</h2>
+
+      <p>
+        Please book a gym membership
+        to view details.
+      </p>
+
+    </div>
+
+  </div>
+
+  `;
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,391 @@
+ /* ================= GLOBAL ================= */
+
+ body {
+     font-family: 'Segoe UI', Tahoma, sans-serif;
+     background: linear-gradient(to right, #eef2f3, #ffffff);
+     margin: 0;
+     padding: 20px;
+     color: #222;
+ }
+
+ h1,
+ h2,
+ h3 {
+     text-align: center;
+ }
+
+ .title {
+     font-size: 32px;
+     font-weight: 700;
+     margin-bottom: 20px;
+ }
+
+ /* ================= BUTTON BASE ================= */
+
+ button {
+     font-family: inherit;
+     cursor: pointer;
+     transition: 0.3s;
+ }
+
+ /* ================= HOME PAGE ================= */
+
+ .hero {
+     text-align: center;
+     padding: 50px;
+     background: linear-gradient(135deg, #007bff, #00c6ff);
+     color: white;
+     border-radius: 15px;
+     margin-bottom: 20px;
+ }
+
+ /* ================= GYMS PAGE ================= */
+
+ .filter-box {
+     text-align: center;
+     margin-bottom: 20px;
+ }
+
+ select {
+     padding: 10px;
+     border-radius: 8px;
+     border: 1px solid #ccc;
+ }
+
+ .gym-container {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+     gap: 20px;
+ }
+
+ /* GYM CARD */
+ .gym-card {
+     background: white;
+     padding: 18px;
+     border-radius: 15px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+     transition: 0.3s;
+ }
+
+ .gym-card:hover {
+     transform: translateY(-5px);
+ }
+
+ .gym-card h3 {
+     margin: 0;
+ }
+
+ .gym-card p {
+     font-size: 14px;
+     color: #555;
+ }
+
+ .gym-card button {
+     width: 100%;
+     padding: 10px;
+     border: none;
+     border-radius: 10px;
+     background: linear-gradient(135deg, #007bff, #00c6ff);
+     color: white;
+ }
+
+ /* STATUS */
+
+ .status {
+     display: inline-block;
+     padding: 4px 10px;
+     border-radius: 20px;
+     font-size: 12px;
+ }
+
+ .approved {
+     background: #e6f7ee;
+     color: #1b8a4a;
+ }
+
+ .pending {
+     background: #fff6e5;
+     color: #c77700;
+ }
+
+ .rejected {
+     background: #ffe6e6;
+     color: #cc0000;
+ }
+
+ /* ================= GYM DETAILS PAGE ================= */
+
+ .details-container {
+     padding: 20px;
+ }
+
+ .gym-header {
+     background: white;
+     padding: 20px;
+     border-radius: 12px;
+     margin-bottom: 20px;
+     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     gap: 15px;
+ }
+
+ /* PLAN / SLOT / CARD (IMPORTANT FIX) */
+
+ .plan-card,
+ .slot-card,
+ .card {
+     background: white;
+     padding: 15px;
+     border-radius: 12px;
+     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+     text-align: center;
+     cursor: pointer;
+     transition: 0.3s;
+ }
+
+ .plan-card:hover,
+ .slot-card:hover {
+     transform: scale(1.03);
+ }
+
+ /* ================= SELECTED STATE ================= */
+
+ .selected {
+     border: 2px solid #28a745;
+     background: #eaffea;
+ }
+
+ /* ================= BOOK BUTTON ================= */
+
+ .book-section {
+     text-align: center;
+     margin-top: 20px;
+ }
+
+ .book-section button {
+     padding: 12px 20px;
+     border: none;
+     border-radius: 10px;
+     background: linear-gradient(135deg, #28a745, #00c853);
+     color: white;
+ }
+
+ /* ================= BOOKING PAGE ================= */
+
+ .booking-container {
+     max-width: 900px;
+     margin: auto;
+ }
+
+ .summary-box {
+     background: white;
+     padding: 15px;
+     border-radius: 12px;
+     margin-top: 20px;
+     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+ }
+
+ .payment-section {
+     text-align: center;
+     margin-top: 20px;
+ }
+
+ .payment-section button {
+     padding: 12px 20px;
+     border: none;
+     border-radius: 10px;
+     background: linear-gradient(135deg, #ff5722, #ff9800);
+     color: white;
+ }
+
+ /* ================= RESPONSIVE ================= */
+
+ @media (max-width: 600px) {
+     .title {
+         font-size: 24px;
+     }
+
+     .gym-card {
+         padding: 14px;
+     }
+ }
+
+
+ /* =========================
+GLOBAL
+========================= */
+
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: 'Segoe UI', sans-serif;
+     background: linear-gradient(to right, #eef2f3, #ffffff);
+     color: #222;
+ }
+
+ /* =========================
+NAVBAR
+========================= */
+
+ .navbar {
+     background: #111;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding: 15px 40px;
+ }
+
+ .logo {
+     color: white;
+     font-size: 28px;
+     font-weight: bold;
+ }
+
+ .nav-links {
+     list-style: none;
+     display: flex;
+     align-items: center;
+     gap: 25px;
+ }
+
+ .nav-links a {
+     color: white;
+     text-decoration: none;
+     font-size: 16px;
+     transition: 0.3s;
+ }
+
+ .nav-links a:hover {
+     color: #00c6ff;
+ }
+
+ .profile-icon {
+     background: #007bff;
+     padding: 10px;
+     border-radius: 50%;
+     color: white;
+ }
+
+ /* =========================
+MEMBERSHIP PAGE
+========================= */
+
+ .membership-page {
+     padding: 50px 20px;
+ }
+
+ .membership-page h1 {
+     text-align: center;
+     margin-bottom: 30px;
+     font-size: 38px;
+ }
+
+ .membership-user-card {
+     max-width: 1000px;
+     margin: auto;
+     background: white;
+     border-radius: 20px;
+     overflow: hidden;
+     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+ }
+
+ .membership-top {
+     background: linear-gradient(135deg, #007bff, #00c6ff);
+     color: white;
+     padding: 30px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .active-status {
+     background: rgba(255, 255, 255, 0.2);
+     padding: 8px 15px;
+     border-radius: 20px;
+     display: inline-block;
+     margin-top: 10px;
+ }
+
+ .crown-icon {
+     font-size: 60px;
+     color: gold;
+ }
+
+ .membership-details {
+     padding: 30px;
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     gap: 20px;
+ }
+
+ .detail-box {
+     background: #f5f7fa;
+     padding: 20px;
+     border-radius: 15px;
+     text-align: center;
+ }
+
+ .detail-box h3 {
+     color: #007bff;
+     margin-bottom: 10px;
+ }
+
+ /* =========================
+FOOTER
+========================= */
+
+ .footer {
+     background: #111;
+     color: white;
+     margin-top: 50px;
+ }
+
+ .footer-container {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     gap: 20px;
+     padding: 40px;
+ }
+
+ .footer a {
+     color: #ccc;
+     text-decoration: none;
+ }
+
+ .footer-bottom {
+     text-align: center;
+     padding: 15px;
+     border-top: 1px solid #333;
+ }
+
+ /* =========================
+RESPONSIVE
+========================= */
+
+ @media(max-width:768px) {
+
+     .navbar {
+         flex-direction: column;
+         gap: 15px;
+     }
+
+     .nav-links {
+         flex-wrap: wrap;
+         justify-content: center;
+     }
+
+     .membership-top {
+         flex-direction: column;
+         text-align: center;
+         gap: 20px;
+     }
+
+ }

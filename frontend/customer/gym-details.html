@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gym Details</title>
+    <link rel="stylesheet" href="css/customer.css">
+</head>
+
+<body>
+
+    <div class="details-container">
+
+        <!-- GYM INFO -->
+        <div class="gym-header">
+            <h1 id="gymName"></h1>
+            <p id="gymLocation"></p>
+            <p id="gymRating"></p>
+            <p id="gymDesc"></p>
+        </div>
+
+        <!-- PLANS -->
+        <h2>Membership Plans</h2>
+        <div id="planList" class="grid"></div>
+
+        <!-- SLOTS -->
+        <h2>Available Slots</h2>
+        <div id="slotList" class="grid"></div>
+
+        <!-- BUTTON -->
+        <div class="book-section">
+            <button onclick="goToBooking()">Proceed to Booking</button>
+        </div>
+
+    </div>
+
+    <script src="./js/gymdetails.js"></script>
+</body>
+
+</html>

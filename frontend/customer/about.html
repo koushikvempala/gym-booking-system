@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Us</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        /* ===== GLOBAL ===== */
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f4f7fb;
+        }
+
+        /* ===== NAVBAR ===== */
+
+        .navbar {
+            background: #111;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .profile-icon {
+            background: #007bff;
+            padding: 10px;
+            border-radius: 50%;
+        }
+
+        /* ===== HERO ===== */
+
+        .about-hero {
+            background: linear-gradient(135deg, #007bff, #00c6ff);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .about-hero h1 {
+            font-size: 45px;
+        }
+
+        /* ===== ABOUT ===== */
+
+        .about-section {
+            padding: 50px 20px;
+        }
+
+        .about-card {
+            background: white;
+            max-width: 1100px;
+            margin: auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+
+        .about-text {
+            padding: 30px;
+        }
+
+        .about-text h2 {
+            color: #007bff;
+        }
+
+        /* ===== FEATURES ===== */
+
+        .features {
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        /* ===== FOOTER ===== */
+
+        .footer {
+            background: #111;
+            color: white;
+            margin-top: 40px;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 40px;
+        }
+
+        .footer a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 15px;
+            border-top: 1px solid #333;
+        }
+
+        /* ===== MOBILE ===== */
+
+        @media(max-width:768px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <nav class="navbar">
+
+        <div class="logo">GymBook</div>
+
+        <ul class="nav-links">
+
+            <li><a href="home.html">Home</a></li>
+            <li><a href="gyms.html">Gyms</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="contact.html">Contact</a></li>
+
+            <li>
+                <a href="profile.html" class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="about-hero">
+
+        <h1>About GymBook</h1>
+
+        <p>
+            Your complete fitness booking platform
+        </p>
+
+    </section>
+
+    <!-- ABOUT -->
+
+    <section class="about-section">
+
+        <div class="about-card">
+
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438">
+
+            <div class="about-text">
+
+                <h2>Who We Are</h2>
+
+                <p>
+                    GymBook helps users discover gyms,
+                    trainers, workout slots and memberships
+                    easily with a modern booking experience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FEATURES -->
+
+    <section class="features">
+
+        <div class="feature-card">
+            <h3>🏋️ Top Gyms</h3>
+            <p>Find premium gyms nearby</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>📅 Easy Booking</h3>
+            <p>Book workout slots instantly</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>💪 Trainers</h3>
+            <p>Certified trainers available</p>
+        </div>
+
+        <div class="feature-card">
+            <h3>🥗 Diet Plans</h3>
+            <p>Nutrition guidance included</p>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+                <h3>GymBook</h3>
+                <p>Your fitness journey starts here</p>
+            </div>
+
+            <div>
+                <h4>Quick Links</h4>
+                <p><a href="home.html">Home</a></p>
+                <p><a href="gyms.html">Gyms</a></p>
+            </div>
+
+            <div>
+                <h4>Contact</h4>
+                <p>Email: support@gymbook.com</p>
+                <p>Phone: +91 9876543210</p>
+            </div>
+
+        </div>
+
+        <p class="footer-bottom">
+            © 2026 GymBook. All rights reserved.
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
