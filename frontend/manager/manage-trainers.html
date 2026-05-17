@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Trainers | Manager Panel</title>
+  <link rel="stylesheet" href="css/manager.css?v=2">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">GB</div>
+        <div><h1>Gym Booking</h1><p>Manager Panel</p></div>
+      </div>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="manage-plans.html">Plans</a>
+        <a class="active" href="manage-trainers.html">Trainers</a>
+        <a href="manage-equipment.html">Equipment</a>
+        <a href="manage-slots.html">Slots</a>
+        <a href="bookings.html">Bookings</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="page-title">
+          <h2>Manage Trainers</h2>
+          <p>Add and manage trainers working at your gym.</p>
+        </div>
+        <div class="profile-dropdown">
+          <button class="profile-btn">
+            <span class="profile-emoji">👤</span>
+            <span id="managerNameDisplay">Manager</span>
+            <span style="font-size: 10px;">▼</span>
+          </button>
+          <div class="dropdown-content">
+            <div class="dropdown-header">
+              <strong id="gymNameDisplay">Your Gym</strong>
+              <small>Manager Account</small>
+            </div>
+            <a href="bookings.html">View Bookings</a>
+            <a href="diet-plans.html">Diet Plans</a>
+            <a href="buy-subscription.html">Buy Subscription</a>
+            <a href="enroll-gym.html">Gym Profile</a>
+            <a href="#" class="logout" onclick="alert('Logged out'); window.location.href='../index.html';">Logout</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="grid two-col">
+        <!-- Add Trainer Form -->
+        <article class="card">
+          <div class="card-header">
+            <h3>Add New Trainer</h3>
+          </div>
+          <div class="card-body">
+            <div id="saveNotice" class="notice">Trainer added successfully!</div>
+            <form id="trainerForm">
+              <div class="field">
+                <label>Trainer Name</label>
+                <input type="text" id="trainerName" placeholder="e.g. Rahul Sharma" required>
+              </div>
+              <div class="grid two-col">
+                <div class="field">
+                  <label>Specialization</label>
+                  <input type="text" id="trainerSpecialization" placeholder="e.g. Strength Training" required>
+                </div>
+                <div class="field">
+                  <label>Experience (Years)</label>
+                  <input type="number" id="trainerExperience" placeholder="e.g. 5" required>
+                </div>
+              </div>
+              <div class="toolbar" style="justify-content: flex-end; margin-top: 15px; gap: 10px;">
+                <input type="hidden" id="editId" value="">
+                <button type="button" id="cancelEditBtn" class="btn secondary" style="display: none;">Cancel Edit</button>
+                <button type="submit" id="submitBtn" class="btn">Add Trainer</button>
+              </div>
+            </form>
+          </div>
+        </article>
+
+        <!-- List of Trainers -->
+        <article class="card">
+          <div class="card-header">
+            <h3>Current Trainers</h3>
+          </div>
+          <div class="table-wrap">
+            <table class="table table-hover align-middle">
+              <thead>
+                  <th>Trainer Name</th>
+                  <th>Specialization</th>
+                  <th>Experience</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="trainersTable">
+                <!-- Populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="js/data-store.js?v=3"></script>
+  <script src="js/trainers.js?v=3"></script>
+</body>
+</html>

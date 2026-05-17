@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Slots | Manager Panel</title>
+  <link rel="stylesheet" href="css/manager.css?v=2">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">GB</div>
+        <div><h1>Gym Booking</h1><p>Manager Panel</p></div>
+      </div>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="manage-plans.html">Plans</a>
+        <a href="manage-trainers.html">Trainers</a>
+        <a href="manage-equipment.html">Equipment</a>
+        <a class="active" href="manage-slots.html">Slots</a>
+        <a href="bookings.html">Bookings</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="page-title">
+          <h2>Manage Slots</h2>
+          <p>Control gym timings and monitor slot occupancy (Capacity limit: 10 per slot).</p>
+        </div>
+        <div class="profile-dropdown">
+          <button class="profile-btn">
+            <span class="profile-emoji">👤</span>
+            <span id="managerNameDisplay">Manager</span>
+            <span style="font-size: 10px;">▼</span>
+          </button>
+          <div class="dropdown-content">
+            <div class="dropdown-header">
+              <strong id="gymNameDisplay">Your Gym</strong>
+              <small>Manager Account</small>
+            </div>
+            <a href="bookings.html">View Bookings</a>
+            <a href="diet-plans.html">Diet Plans</a>
+            <a href="buy-subscription.html">Buy Subscription</a>
+            <a href="enroll-gym.html">Gym Profile</a>
+            <a href="#" class="logout" onclick="alert('Logged out'); window.location.href='../index.html';">Logout</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="grid two-col">
+        <!-- Add Slot Form -->
+        <article class="card">
+          <div class="card-header">
+            <h3>Add New Slot</h3>
+          </div>
+          <div class="card-body">
+            <div id="saveNotice" class="notice">Slot added successfully!</div>
+            <form id="slotForm">
+              <div class="field">
+                <label>Time Window</label>
+                <input type="text" id="slotTime" placeholder="e.g. 05:00 AM - 06:00 AM" required>
+              </div>
+              <div class="field">
+                <label>Capacity</label>
+                <input type="number" id="slotCapacity" value="10" required>
+                <small style="color: var(--muted); font-size: 12px; display: block; margin-top: 4px;">Max members allowed in this slot. Slots with full capacity will not be shown to customers.</small>
+              </div>
+              <div class="toolbar" style="justify-content: flex-end; margin-top: 15px; gap: 10px;">
+                <input type="hidden" id="editId" value="">
+                <button type="button" id="cancelEditBtn" class="btn secondary" style="display: none;">Cancel Edit</button>
+                <button type="submit" id="submitBtn" class="btn">Create Slot</button>
+              </div>
+            </form>
+          </div>
+        </article>
+
+        <!-- List of Slots -->
+        <article class="card">
+          <div class="card-header">
+            <h3>Current Slots</h3>
+          </div>
+          <div class="table-wrap">
+            <table class="table table-hover align-middle">
+              <thead>
+                <tr>
+                  <th>Time</th>
+                  <th>Occupancy</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="slotsTable">
+                <!-- Populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="js/data-store.js?v=3"></script>
+  <script src="js/slots.js?v=3"></script>
+</body>
+</html>

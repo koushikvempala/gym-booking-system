@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manager Dashboard | Gym Booking System</title>
+  <link rel="stylesheet" href="css/manager.css?v=2">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">GB</div>
+        <div><h1>Gym Booking</h1><p>Manager Panel</p></div>
+      </div>
+      <nav class="nav">
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="manage-plans.html">Plans</a>
+        <a href="manage-trainers.html">Trainers</a>
+        <a href="manage-equipment.html">Equipment</a>
+        <a href="manage-slots.html">Slots</a>
+        <a href="bookings.html">Bookings</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="page-title">
+          <h2>Manager Dashboard</h2>
+          <p>Operational overview for your gym, memberships, and customer bookings.</p>
+        </div>
+        <div class="profile-dropdown">
+          <button class="profile-btn">
+            <span class="profile-emoji">👤</span>
+            <span id="managerNameDisplay">Manager</span>
+            <span style="font-size: 10px;">▼</span>
+          </button>
+          <div class="dropdown-content">
+            <div class="dropdown-header">
+              <strong id="gymNameDisplay">Your Gym</strong>
+              <small>Manager Account</small>
+            </div>
+            <a href="bookings.html">View Bookings</a>
+            <a href="diet-plans.html">Diet Plans</a>
+            <a href="buy-subscription.html">Buy Subscription</a>
+            <a href="enroll-gym.html">Gym Profile</a>
+            <a href="#" class="logout" onclick="alert('Logged out'); window.location.href='../index.html';">Logout</a>
+          </div>
+        </div>
+      </header>
+      <section class="hero-panel">
+        <article class="card summary-panel">
+          <h3 id="heroGymName">Welcome back!</h3>
+          <p>Monitor your gym's performance, revenue, bookings, and available slots from your workspace.</p>
+          <div class="summary-meta">
+            <span id="liveDate">Updated today</span>
+            <span>Gym operations</span>
+            <span>Slot control</span>
+          </div>
+        </article>
+        <article class="card health-panel">
+          <div class="health-score">
+            <div>
+              <h3>Occupancy Rate</h3>
+              <p id="healthText">Calculating current slot utilization.</p>
+            </div>
+            <div class="score-ring" id="healthScore">0%</div>
+          </div>
+        </article>
+      </section>
+      <section class="grid stats-grid">
+        <article class="card stat"><span>Total Members</span><strong id="totalMembers">0</strong><small>Active in your gym</small></article>
+        <article class="card stat"><span>Active Plans</span><strong id="totalPlans">0</strong><small>Membership options available</small></article>
+        <article class="card stat"><span>Total Revenue</span><strong id="totalRevenue">Rs 0</strong><small>Confirmed booking payments</small></article>
+        <article class="card stat"><span>Available Slots</span><strong id="totalSlots">0</strong><small>With capacity remaining</small></article>
+      </section>
+      <section class="grid two-col" style="margin-top:18px">
+        <article class="card">
+          <div class="card-header"><h3>Slot Utilization Status</h3><a class="btn secondary" href="manage-slots.html">Review Slots</a></div>
+          <div class="card-body">
+            <div class="kpi-strip" style="margin-bottom:16px">
+              <div><strong id="slotsFull">0</strong><span>Fully Booked</span></div>
+              <div><strong id="slotsOpen">0</strong><span>Open Slots</span></div>
+              <div><strong id="totalTrainers">0</strong><span>Trainers</span></div>
+            </div>
+            <div id="approvalBars" class="bar-list"></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-header"><h3>Recent Bookings</h3><a class="btn secondary" href="bookings.html">View All</a></div>
+          <div class="table-wrap">
+            <table class="table table-hover align-middle">
+              <thead><tr><th>ID</th><th>Customer</th><th>Slot</th><th>Plan</th><th>Amount</th></tr></thead>
+              <tbody id="recentBookings"></tbody>
+            </table>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="js/data-store.js?v=3"></script>
+  <script src="js/dashboard.js?v=3"></script>
+</body>
+</html>

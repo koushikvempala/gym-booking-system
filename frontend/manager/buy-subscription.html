@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buy Subscription | Manager Panel</title>
+  <link rel="stylesheet" href="css/manager.css?v=2">
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-mark">GB</div>
+        <div><h1>Gym Booking</h1><p>Manager Panel</p></div>
+      </div>
+      <nav class="nav">
+        <a href="dashboard.html">Dashboard</a>
+        <a href="manage-plans.html">Plans</a>
+        <a href="manage-trainers.html">Trainers</a>
+        <a href="manage-equipment.html">Equipment</a>
+        <a href="manage-slots.html">Slots</a>
+        <a href="bookings.html">Bookings</a>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="topbar">
+        <div class="page-title">
+          <h2>Platform Subscription</h2>
+          <p>Purchase or renew your Gym Booking System software license.</p>
+        </div>
+        <div class="profile-dropdown">
+          <button class="profile-btn">
+            <span class="profile-emoji">👤</span>
+            <span id="managerNameDisplay">Manager</span>
+            <span style="font-size: 10px;">▼</span>
+          </button>
+          <div class="dropdown-content">
+            <div class="dropdown-header">
+              <strong id="gymNameDisplay">Your Gym</strong>
+              <small>Manager Account</small>
+            </div>
+            <a href="enroll-gym.html">Gym Profile</a>
+            <a href="bookings.html">View Bookings</a>
+            <a href="diet-plans.html">Diet Plans</a>
+            <a href="buy-subscription.html">Buy Subscription</a>
+            <a href="#" class="logout" onclick="alert('Logged out'); window.location.href='../index.html';">Logout</a>
+          </div>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="card-body">
+          <div id="subscriptionNotice" class="notice" style="background: #d1fae5; color: #065f46; border-color: #34d399;">
+            Payment Successful! Platform Subscription Active.
+          </div>
+          <form id="subscriptionForm">
+            <div class="field" style="margin-bottom: 20px;">
+              <label style="font-size: 16px; margin-bottom: 15px; display: block;">Select a Software License</label>
+              <div id="planCards" class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px;">
+                <!-- Populated via JS -->
+                <div style="color: var(--muted);">Loading admin plans...</div>
+              </div>
+              <input type="hidden" id="selectedPlanId" required>
+              <input type="hidden" id="selectedPlanName" required>
+              <small style="color: var(--muted); font-size: 12px; margin-top: 15px; display: block;">Select a software license to use this Gym Booking Platform.</small>
+            </div>
+
+            <div id="paymentSection" style="display: none; animation: fadeIn 0.4s ease;">
+              <hr style="border: 0; border-top: 1px solid var(--line); margin: 24px 0;">
+
+              <h3 style="margin-top: 0; margin-bottom: 16px;">Payment Details</h3>
+              <div class="grid two-col">
+                <div class="field">
+                  <label>Payment Method</label>
+                  <select id="payMethod" required>
+                    <option value="">Select Method</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Card">Credit/Debit Card</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label>Amount (Rs)</label>
+                  <input type="number" id="payAmount" disabled value="0">
+                </div>
+              </div>
+
+              <div id="upiFields" style="display: none; margin-top: 15px;">
+                <div class="field">
+                  <label>UPI ID</label>
+                  <input type="text" id="upiId" placeholder="e.g. yourname@okbank" pattern="[a-zA-Z0-9.\-_]{2,256}@[a-zA-Z]{2,64}" title="Please enter a valid UPI ID (e.g. name@bank)">
+                </div>
+              </div>
+
+              <div id="cardFields" class="grid two-col" style="display: none; margin-top: 15px;">
+                <div class="field">
+                  <label>Card Number</label>
+                  <input type="text" id="cardNumber" placeholder="1234567890123456" pattern="\d{16}" title="Please enter exactly 16 digits" maxlength="16">
+                </div>
+                <div class="field">
+                  <label>CVV</label>
+                  <input type="text" id="cardCvv" placeholder="123" pattern="\d{3}" title="Please enter exactly 3 digits" maxlength="3">
+                </div>
+              </div>
+
+              <div class="toolbar" style="justify-content: flex-end; margin-top: 20px;">
+                <button type="submit" class="btn success" id="payBtn" style="font-size: 16px; padding: 12px 30px;">Pay Admin & Subscribe</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/data-store.js?v=4"></script>
+  <script src="js/buy-subscription.js?v=4"></script>
+</body>
+</html>

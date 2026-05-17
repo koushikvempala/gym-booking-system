@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manage Equipment | Manager Panel</title>
+  <title>Manage Diet Plans | Manager Panel</title>
   <link rel="stylesheet" href="css/manager.css?v=2">
 </head>
 <body>
@@ -17,7 +17,7 @@
         <a href="dashboard.html">Dashboard</a>
         <a href="manage-plans.html">Plans</a>
         <a href="manage-trainers.html">Trainers</a>
-        <a class="active" href="manage-equipment.html">Equipment</a>
+        <a href="manage-equipment.html">Equipment</a>
         <a href="manage-slots.html">Slots</a>
         <a href="bookings.html">Bookings</a>
       </nav>
@@ -25,8 +25,8 @@
     <main class="main">
       <header class="topbar">
         <div class="page-title">
-          <h2>Manage Equipment</h2>
-          <p>Track and manage your gym's equipment inventory.</p>
+          <h2>Diet Plans</h2>
+          <p>Customize the static diet plans or add new ones for your members.</p>
         </div>
         <div class="profile-dropdown">
           <button class="profile-btn">
@@ -49,57 +49,56 @@
       </header>
 
       <section class="grid two-col">
-        <!-- Add Equipment Form -->
+        <!-- Add/Edit Diet Plan Form -->
         <article class="card">
           <div class="card-header">
-            <h3>Add New Equipment</h3>
+            <h3 id="formTitle">Add New Diet Plan</h3>
           </div>
           <div class="card-body">
-            <div id="saveNotice" class="notice">Equipment added successfully!</div>
-            <form id="equipmentForm">
+            <div id="saveNotice" class="notice">Diet plan saved successfully!</div>
+            <form id="dietForm">
+              <input type="hidden" id="editDietId" value="">
               <div class="field">
-                <label>Equipment Name</label>
-                <input type="text" id="equipmentName" placeholder="e.g. Treadmill" required>
+                <label>Plan Name</label>
+                <input type="text" id="dietName" placeholder="e.g. Keto Plan" required>
               </div>
               <div class="grid two-col">
                 <div class="field">
-                  <label>Quantity</label>
-                  <input type="number" id="equipmentQty" placeholder="e.g. 5" required>
+                  <label>Calories (kcal/day)</label>
+                  <input type="number" id="dietCalories" placeholder="e.g. 1800" required>
                 </div>
                 <div class="field">
-                  <label>Condition</label>
-                  <select id="equipmentCondition" required>
-                    <option value="Excellent">Excellent</option>
-                    <option value="Good">Good</option>
-                    <option value="Needs Maintenance">Needs Maintenance</option>
-                  </select>
+                  <label>Goal</label>
+                  <input type="text" id="dietGoal" placeholder="e.g. Fat Loss" required>
                 </div>
               </div>
+              <div class="field">
+                <label>Details / Instructions</label>
+                <textarea id="dietDetails" placeholder="Diet content and daily meals..." required></textarea>
+              </div>
               <div class="toolbar" style="justify-content: flex-end; margin-top: 15px; gap: 10px;">
-                <input type="hidden" id="editId" value="">
-                <button type="button" id="cancelEditBtn" class="btn secondary" style="display: none;">Cancel Edit</button>
-                <button type="submit" id="submitBtn" class="btn">Add Equipment</button>
+                <button type="button" class="btn secondary" id="cancelEditBtn" style="display: none;">Cancel Edit</button>
+                <button type="submit" class="btn" id="submitBtn">Save Plan</button>
               </div>
             </form>
           </div>
         </article>
 
-        <!-- List of Equipment -->
+        <!-- List of Diet Plans -->
         <article class="card">
           <div class="card-header">
-            <h3>Inventory</h3>
+            <h3>Available Diet Plans</h3>
           </div>
           <div class="table-wrap">
             <table class="table table-hover align-middle">
               <thead>
                 <tr>
-                  <th>Equipment Name</th>
-                  <th>Quantity</th>
-                  <th>Condition</th>
+                  <th>Plan Details</th>
+                  <th>Goal</th>
                   <th>Actions</th>
                 </tr>
               </thead>
-              <tbody id="equipmentTable">
+              <tbody id="dietTable">
                 <!-- Populated via JS -->
               </tbody>
             </table>
@@ -109,6 +108,6 @@
     </main>
   </div>
   <script src="js/data-store.js?v=3"></script>
-  <script src="js/equipment.js?v=3"></script>
+  <script src="js/diet.js?v=3"></script>
 </body>
 </html>
