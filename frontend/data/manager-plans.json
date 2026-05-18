@@ -1,0 +1,12 @@
+[
+  { "plan_id": 201, "gym_id": 101, "plan_name": "1 Month - Without Trainer", "duration": "1 Month", "price": 1499, "trainer_included": false, "features": "Gym access, locker access, group classes" },
+  { "plan_id": 202, "gym_id": 101, "plan_name": "3 Months - Without Trainer", "duration": "3 Months", "price": 3999, "trainer_included": false, "features": "Gym access, locker access, group classes, monthly assessment" },
+  { "plan_id": 203, "gym_id": 101, "plan_name": "12 Months - Without Trainer", "duration": "12 Months", "price": 11999, "trainer_included": false, "features": "Annual gym access, locker access, group classes, quarterly assessment" },
+  { "plan_id": 204, "gym_id": 101, "plan_name": "1 Month - With Trainer", "duration": "1 Month", "price": 2999, "trainer_included": true, "features": "Gym access, personal trainer, fitness assessment, diet guidance" },
+  { "plan_id": 205, "gym_id": 101, "plan_name": "3 Months - With Trainer", "duration": "3 Months", "price": 7999, "trainer_included": true, "features": "Gym access, personal trainer, progress tracking, diet plan" },
+  { "plan_id": 206, "gym_id": 101, "plan_name": "12 Months - With Trainer", "duration": "12 Months", "price": 19999, "trainer_included": true, "features": "Annual gym access, personal trainer, priority slots, advanced diet plan" },
+  { "plan_id": 207, "gym_id": 102, "plan_name": "1 Month Basic", "duration": "1 Month", "price": 1999, "trainer_included": false, "features": "Full access" },
+  { "plan_id": 208, "gym_id": 102, "plan_name": "3 Months Basic", "duration": "3 Months", "price": 4999, "trainer_included": false, "features": "Full access, towel service" },
+  { "plan_id": 209, "gym_id": 105, "plan_name": "1 Month Pro", "duration": "1 Month", "price": 2499, "trainer_included": true, "features": "Pro access, diet tracking" },
+  { "plan_id": 210, "gym_id": 106, "plan_name": "6 Months Elite", "duration": "6 Months", "price": 8999, "trainer_included": true, "features": "Elite access, recovery room" }
+]

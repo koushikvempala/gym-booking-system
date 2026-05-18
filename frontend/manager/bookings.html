@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Manage Bookings | Manager Panel</title>
   <link rel="stylesheet" href="css/manager.css?v=2">
+  <link rel="stylesheet" href="../common/css/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     /* Tabs for Bookings Page */
     .tabs {
@@ -41,7 +43,9 @@
   <div class="admin-shell">
     <aside class="sidebar">
       <div class="brand">
-        <div class="brand-mark">GB</div>
+        <div class="brand-mark">
+          <img src="../common/images/logo.png" alt="Gym Logo">
+        </div>
         <div>
           <h1>Gym Booking</h1>
           <p>Manager Panel</p>
@@ -64,9 +68,11 @@
         </div>
         <div class="profile-dropdown">
           <button class="profile-btn">
-            <span class="profile-emoji">👤</span>
+            <span class="profile-emoji">
+              <i class="fa-regular fa-user" style="color: black;"></i>
+            </span>
             <span id="managerNameDisplay">Manager</span>
-            <span style="font-size: 10px;">▼</span>
+            <span id="dropwdownDisplay" style="font-size: 12px;"><i class="fa-solid fa-angle-down"></i></span>
           </button>
           <div class="dropdown-content">
             <div class="dropdown-header">
@@ -77,7 +83,8 @@
             <a href="diet-plans.html">Diet Plans</a>
             <a href="buy-subscription.html">Buy Subscription</a>
             <a href="enroll-gym.html">Gym Profile</a>
-            <a href="#" class="logout" onclick="alert('Logged out'); window.location.href='../index.html';">Logout</a>
+            <a href="../common/components/logout.html" class="logout"
+              onclick="alert('Logged out'); window.location.href='../common/components/logout.html';">Logout</a>
           </div>
         </div>
       </header>
@@ -85,6 +92,12 @@
       <section class="card">
         <div class="card-body">
           <div id="viewBookings" class="tab-content active">
+            <div class="toolbar" style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap;">
+              <input type="text" id="searchBooking" placeholder="Search by name or booking ID..." style="flex: 1; min-width: 200px; padding: 10px; border: 1px solid var(--line); border-radius: 4px;">
+              <select id="filterPlan" style="padding: 10px; border: 1px solid var(--line); border-radius: 4px; background: white;">
+                <option value="">All Plans</option>
+              </select>
+            </div>
             <div class="table-wrap">
               <table class="table table-hover align-middle">
                 <thead>
@@ -92,9 +105,10 @@
                     <th>Booking ID</th>
                     <th>Customer Name</th>
                     <th>Plan</th>
+                    <th>Start date</th>
+                    <th>Valid till</th>
                     <th>Slot</th>
                     <th>Amount Paid</th>
-                    <th>Date</th>
                   </tr>
                 </thead>
                 <tbody id="bookingsTable">

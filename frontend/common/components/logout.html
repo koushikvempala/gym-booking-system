@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     
+    <meta charset="UTF-8">
+      <title>Logged Out</title>
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+      <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            color: #333;
+        }
+
+        .card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 0.6s ease-in-out;
+        }
+
+        .icon {
+            font-size: 60px;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-login {
+            background: #4facfe;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background: #007bff;
+            transform: translateY(-2px);
+        }
+
+        .countdown {
+            margin-top: 15px;
+            font-size: 13px;
+            color: #888;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 400px) {
+            .card {
+                width: 90%;
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+      <div class="card">
+            <div class="icon">✅</div>
+            <h1>You’ve been logged out</h1>
+            <p>Thank you for using our platform.<br>For security reasons, your session has ended.</p>
+
+            <a href="login.html" class="btn btn-login">Login Again</a>
+
+            <div class="countdown">
+                  Redirecting to login in <span id="timer">5</span> seconds...
+                </div>
+          </div>
+
+     
+    <script>
+        let time = 5;
+        const timerElement = document.getElementById('timer');
+
+        const countdown = setInterval(() => {
+            time--;
+            timerElement.textContent = time;
+
+            if (time <= 0) {
+                clearInterval(countdown);
+                window.location.href = "login.html";
+            }
+        }, 1000);
+    </script>
+
+</body>
+
+</html>

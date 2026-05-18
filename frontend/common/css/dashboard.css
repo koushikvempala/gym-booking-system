@@ -1,0 +1,46 @@
+.brand-mark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-mark img {
+    width: 45px;
+    height: 45px;
+    border-radius: 8px;
+    /* rounded logo */
+}
+
+
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0;
+    border-bottom: 0;
+    min-width: 230px;
+}
+
+/* .brand-mark {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: var(--brand);
+  color: white;
+  font-weight: 800;
+} */
+
+.brand h1 {
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.1;
+}
+
+.brand p {
+    margin: 3px 0 0;
+    font-size: 12px;
+    color: #94a3b8;
+}

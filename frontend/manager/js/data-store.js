@@ -97,13 +97,22 @@ const money = (value) => `Rs ${Number(value || 0).toLocaleString("en-IN")}`;
 
 // We act as manager_id = 2 (Riya Sharma) starting a fresh enrollment session
 const CURRENT_MANAGER_ID = 2;
-let CURRENT_GYM_ID = localStorage.getItem('SIMULATED_GYM_ID') !== null ? parseInt(localStorage.getItem('SIMULATED_GYM_ID')) : null;
+let CURRENT_GYM_ID = localStorage.getItem('SIMULATED_GYM_ID') !== null ? parseInt(localStorage.getItem('SIMULATED_GYM_ID')) : 101;
 
 async function loadData(name) {
+  // Clear cache for decoupled files to force fetching the new JSON
+  if (name === "bookings" || name === "plans") {
+    localStorage.removeItem(storeKey(name));
+  }
+
   const saved = localStorage.getItem(storeKey(name));
   if (saved) return JSON.parse(saved);
   try {
-    const response = await fetch(`../data/${name}.json`);
+    let filename = name;
+    if (name === "bookings") filename = "manager-bookings";
+    if (name === "plans") filename = "manager-plans";
+
+    const response = await fetch(`../data/${filename}.json?v=${Date.now()}`);
     if (!response.ok) throw new Error("Data unavailable");
     const data = await response.json();
     localStorage.setItem(storeKey(name), JSON.stringify(data));

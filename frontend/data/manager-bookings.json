@@ -1,0 +1,11 @@
+[
+  { "booking_id": 301, "customer_id": 4, "gym_id": 101, "slot_id": 801, "membership_type": "3 Months - With Trainer", "trainer_required": true, "total_amount": 7999, "booking_date": "2026-05-01", "payment_status": "paid" },
+  { "booking_id": 302, "customer_id": 5, "gym_id": 102, "slot_id": null, "membership_type": "1 Month Basic", "trainer_required": false, "total_amount": 1999, "booking_date": "2026-05-03", "payment_status": "paid" },
+  { "booking_id": 303, "customer_id": 4, "gym_id": 101, "slot_id": 802, "membership_type": "12 Months - With Trainer", "trainer_required": true, "total_amount": 19999, "booking_date": "2026-05-08", "payment_status": "paid" },
+  { "booking_id": 304, "customer_id": 8, "gym_id": 102, "slot_id": null, "membership_type": "3 Months Basic", "trainer_required": false, "total_amount": 4999, "booking_date": "2026-05-09", "payment_status": "paid" },
+  { "booking_id": 305, "customer_id": 9, "gym_id": 106, "slot_id": null, "membership_type": "6 Months Elite", "trainer_required": true, "total_amount": 8999, "booking_date": "2026-05-10", "payment_status": "paid" },
+  { "booking_id": 306, "customer_id": 10, "gym_id": 101, "slot_id": null, "membership_type": "1 Month - Without Trainer", "trainer_required": false, "total_amount": 1499, "booking_date": "2026-05-10", "payment_status": "pending" },
+  { "booking_id": 307, "customer_id": 13, "gym_id": 105, "slot_id": null, "membership_type": "1 Month Pro", "trainer_required": true, "total_amount": 2499, "booking_date": "2026-05-11", "payment_status": "paid" },
+  { "booking_id": 309, "customer_id": 15, "gym_id": 101, "slot_id": 803, "membership_type": "12 Months - Without Trainer", "trainer_required": false, "total_amount": 11999, "booking_date": "2026-05-12", "payment_status": "paid" },
+  { "booking_id": 315, "customer_id": 14, "gym_id": 101, "slot_id": 801, "membership_type": "3 Months - With Trainer", "trainer_required": true, "total_amount": 7999, "booking_date": "2026-05-15", "payment_status": "paid" }
+]
