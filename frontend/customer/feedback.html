@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Gym Feedback</title>
+
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="./css/feedback.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Gym Feedback</h2>
+
+        <!-- INPUTS -->
+        <div class="input-box">
+            <input id="name" placeholder="Full Name">
+        </div>
+
+        <div class="input-box">
+            <input id="email" placeholder="Email">
+        </div>
+
+        <div class="input-box">
+            <input id="phone" placeholder="Phone Number">
+        </div>
+
+        <!-- RATINGS -->
+        <div id="ratings"></div>
+
+        <!-- FEEDBACK -->
+        <div class="input-box">
+            <textarea id="comment" placeholder="Write your feedback"></textarea>
+        </div>
+
+        <button onclick="submitFeedback()">Submit Feedback</button>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <h3>✅ Feedback Submitted</h3>
+            <p>Thanks for helping us improve!</p>
+
+            <button onclick="closeModal()">OK</button>
+        </div>
+    </div>
+
+    <!-- JS FILE -->
+    <script src="./js/feedback.js"></script>
+
+</body>
+
+</html>

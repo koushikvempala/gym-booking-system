@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ---------- Page ---------- */
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* ---------- Main Container ---------- */
+.main-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ---------- Card ---------- */
+.hero-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 400px;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid #dddddd;
+    text-align: center;
+}
+
+/* ---------- Title ---------- */
+.hero-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.hero-description {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* ---------- Form ---------- */
+.form-label {
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #444444;
+}
+
+.custom-control {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border: 1px solid #cccccc;
+    font-size: 14px;
+}
+
+/* ---------- Buttons ---------- */
+.button-area {
+    display: flex;
+    justify-content: space-between;
+}
+
+.primary-btn,
+.secondary-btn {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* Register Button */
+.primary-btn {
+    background: #2563eb;
+    color: #ffffff;
+}
+
+/* Login Button */
+.secondary-btn {
+    background: #e5e7eb;
+    color: #333333;
+}
+
+.primary-btn:hover {
+    background: #1d4ed8;
+}
+
+.secondary-btn:hover {
+    background: #d1d5db;
+}
+
+/* ---------- Modal ---------- */
+.custom-modal {
+    border-radius: 8px;
+}
+
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* ---------- Messages ---------- */
+.alert-message {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 5px;
+    font-size: 13px;
+}
+
+.success-message {
+    background: #e6fffa;
+    color: #2c7a7b;
+}
+
+.error-message {
+    background: #ffe6e6;
+    color: #c53030;
+}

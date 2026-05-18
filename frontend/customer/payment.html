@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gym Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./css/payment.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- PAYMENT -->
+        <div class="card">
+            <h2>Gym Payment 💳</h2>
+
+            <!-- PLAN -->
+            <div class="input-group">
+                <select id="plan" onchange="updatePrice()">
+                    <option value="2000">1 Month - ₹2000</option>
+                    <option value="9000">6 Months - ₹9000</option>
+                    <option value="15000">1 Year - ₹15000</option>
+                </select>
+            </div>
+
+            <!-- TABS -->
+            <div class="tabs">
+                <div class="tab active" onclick="switchTab(event,'card')">Card</div>
+                <div class="tab" onclick="switchTab(event,'upi')">UPI</div>
+                <div class="tab" onclick="switchTab(event,'wallet')">Wallet</div>
+            </div>
+
+            <!-- CARD -->
+            <div id="card" class="pay-section">
+                <input placeholder="Card Number">
+                <input placeholder="Name">
+                <input placeholder="MM/YY">
+                <input placeholder="CVV" type="password">
+            </div>
+
+            <!-- UPI -->
+            <div id="upi" class="pay-section" style="display:none;">
+                <input placeholder="Enter UPI ID">
+            </div>
+
+            <!-- WALLET -->
+            <div id="wallet" class="pay-section" style="display:none;">
+                <select>
+                    <option>Paytm</option>
+                    <option>PhonePe</option>
+                    <option>Google Pay</option>
+                </select>
+            </div>
+
+            <input id="coupon" placeholder="Coupon Code">
+
+            <button class="btn" onclick="applyCoupon()">Apply Coupon</button>
+
+            <button class="btn" onclick="payNow()">Pay Now</button>
+        </div>
+
+        <!-- SUMMARY -->
+        <div class="card">
+            <h2>Summary</h2>
+
+            <div class="summary">
+                <p><span>Plan</span><span id="planText">1 Month</span></p>
+                <p><span>Price</span><span id="price">₹2000</span></p>
+                <p><span>Discount</span><span id="discount">₹0</span></p>
+                <hr>
+                <p class="total"><span>Total</span><span id="total">₹2000</span></p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal" id="modal">
+        <div class="modal-box">
+            <h2>✅ Payment Success</h2>
+            <button class="btn" onclick="closeModal()">OK</button>
+        </div>
+    </div>
+
+    <script src="./js/payment.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking History</title>
+
+    <!-- CSS FILE -->
+    <link rel="stylesheet" href="./css/history.css">
+</head>
+
+<body>
+
+    <!-- DARK MODE ICON -->
+    <div class="dark-toggle" onclick="toggleDarkMode()">🌙</div>
+
+    <div class="container">
+
+        <!-- HEADER -->
+        <div class="header">
+            <h1>🏋️ Booking History</h1>
+            <p>Your gym session records</p>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats">
+            <div class="stat-box">
+                <h3 id="total">0</h3>
+                Total Bookings
+            </div>
+
+            <div class="stat-box">
+                <h3 id="active">0</h3>
+                Active
+            </div>
+
+            <div class="stat-box">
+                <h3 id="cancelledCount">0</h3>
+                Cancelled
+            </div>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="filters">
+            <input type="text" id="search" placeholder="Search gym...">
+            <input type="date" id="dateFilter">
+
+            <select id="statusFilter">
+                <option value="all">All</option>
+                <option value="completed">Completed</option>
+                <option value="upcoming">Upcoming</option>
+                <option value="cancelled">Cancelled</option>
+            </select>
+        </div>
+
+        <!-- BOOKINGS -->
+        <div id="bookingList"></div>
+
+        <!-- ABOUT US -->
+        <div class="about">
+            <h2>About Us</h2>
+
+            <p>
+                Our Gym Booking Platform allows customers to easily explore,
+                book, and manage fitness sessions across multiple gyms.
+                We focus on providing a simple, user-friendly experience
+                with real-time booking tracking, flexible cancellations,
+                and performance insights.
+            </p>
+
+            <ul>
+                <li>✔ Easy booking management</li>
+                <li>✔ Track your fitness journey</li>
+                <li>✔ Secure and fast system</li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 Gym Booking System | All Rights Reserved
+    </footer>
+
+    <!-- JS FILE -->
+    <script src="./js/history.js"></script>
+
+</body>
+
+</html>
