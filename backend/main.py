@@ -42,6 +42,7 @@ from manager.manage_equipment import manage_equipment_menu
 from manager.manage_slots import manage_slots_menu
 from manager.bookings import bookings_menu
 from manager.dietplans import dietplans_menu
+from manager.register import manager_register
 
 # ─── Customer Modules ───
 from customer.register import customer_register
@@ -200,6 +201,7 @@ def main():
         print("  1. Admin Login")
         print("  2. Manager / Customer Login")
         print("  3. New Customer? Register Here")
+        print("  4. New Manager? Register Here")
         print("  0. Exit")
         choice = input("\n  Enter choice: ").strip()
 
@@ -220,6 +222,9 @@ def main():
 
         elif choice == "3":
             customer_register()
+
+        elif choice == "4":
+            manager_register()
 
         elif choice == "0":
             print("\n  Goodbye! See you at the gym!\n")

@@ -4,6 +4,7 @@ from common.calculations import (
     display_pricing_breakdown, get_expiry_date, DURATION_LABELS
 )
 from common.helpers import today_str
+from common.validations import process_payment
 from database.queries import (
     get_all_approved_gyms, get_gym_by_id,
     get_slots_by_gym, get_trainers_by_gym,
@@ -192,13 +193,7 @@ def book_gym():
     )
 
     # Step 6: Payment
-    print("\n  PAYMENT METHOD:")
-    print("  1. Cash")
-    print("  2. Card")
-    print("  3. UPI")
-    pay_choice = input("  Choose (1/2/3): ").strip()
-    method_map = {"1": "cash", "2": "card", "3": "upi"}
-    payment_method = method_map.get(pay_choice, "cash")
+    payment_method = process_payment(result['total'])
 
     confirm = input(f"\n  Confirm booking for Rs. {result['total']}? (y/n): ").strip().lower()
     if confirm != "y":

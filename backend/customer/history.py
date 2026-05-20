@@ -2,9 +2,11 @@ from common.helpers import print_header, print_table, pause
 from common.auth import get_user_id
 from database.queries import (
     get_bookings_by_customer, get_payments_by_customer,
-    get_memberships_by_customer, cancel_booking
+    get_memberships_by_customer, cancel_booking,
+    cancel_membership_by_booking
 )
 from common.helpers import is_date_past
+from datetime import datetime, timezone
 
 def view_booking_history():
     print_header("MY BOOKING HISTORY")
@@ -28,6 +30,16 @@ def view_payment_history():
         print("  No payments found.")
         pause()
         return
+
+    for p in payments:
+        if p.get("paid_at"):
+            try:
+                dt_utc = datetime.strptime(p["paid_at"], "%Y-%m-%d %H:%M:%S").replace(tzinfo=timezone.utc)
+                dt_local = dt_utc.astimezone()
+                p["paid_at"] = dt_local.strftime("%Y-%m-%d %H:%M:%S")
+            except ValueError:
+                pass
+
     total = sum(p["total_amount"] or 0 for p in payments)
     print(f"  Total Spent: Rs. {round(total, 2)}\n")
     print_table(payments, [
@@ -46,7 +58,12 @@ def view_memberships():
         return
     for m in memberships:
         expired = is_date_past(m["expiry_date"])
-        status = "EXPIRED" if expired else "ACTIVE"
+        if m.get("is_active") == 0:
+            status = "CANCELLED"
+        elif expired:
+            status = "EXPIRED"
+        else:
+            status = "ACTIVE"
         print(f"\n  [{m['id']}] {m['gym_name']}")
         print(f"       Type    : {m['membership_type'].capitalize()} Training")
         print(f"       From    : {m['start_date']}  To: {m['expiry_date']}")
@@ -77,6 +94,7 @@ def cancel_my_booking():
     confirm = input(f"  Cancel booking at {booking['gym_name']}? (y/n): ").strip().lower()
     if confirm == "y":
         cancel_booking(bid)
+        cancel_membership_by_booking(bid)
         print("  [SUCCESS] Booking cancelled.")
     pause()
 

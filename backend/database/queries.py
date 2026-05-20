@@ -300,6 +300,9 @@ def get_memberships_by_customer(customer_id):
         (customer_id,), fetchall=True
     )
 
+def cancel_membership_by_booking(booking_id):
+    return execute_query("UPDATE memberships SET is_active=0 WHERE booking_id=?", (booking_id,), commit=True)
+
 # ═══════════════════════════════════════════
 # FEEDBACK QUERIES
 # ═══════════════════════════════════════════

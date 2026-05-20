@@ -1,6 +1,6 @@
 from common.helpers import print_header, pause, print_table
 from common.auth import get_user_id
-from common.validations import is_non_empty, is_valid_email, is_valid_phone, is_positive_number
+from common.validations import is_non_empty, is_valid_email, is_valid_phone, is_positive_number, process_payment
 from common.helpers import today_str, add_months
 from database.queries import (
     get_all_plans, get_plan_by_id, get_gym_by_manager,
@@ -47,10 +47,7 @@ def subscribe_to_plan():
     print(f"\n  Plan    : {plan['plan_name']}")
     print(f"  Price   : Rs. {plan['price']}")
     print(f"  Duration: {plan['duration_months']} months")
-    print("\n  Payment Methods: 1.Cash  2.Card  3.UPI")
-    method = input("  Choose payment method (1/2/3): ").strip()
-    method_map = {"1": "cash", "2": "card", "3": "upi"}
-    pay_method = method_map.get(method, "cash")
+    pay_method = process_payment(plan['price'])
 
     today = today_str()
     expiry = add_months(today, plan["duration_months"])
@@ -77,8 +74,15 @@ def enroll_gym():
     # Check if already enrolled
     existing = get_gym_by_manager(manager_id)
     if existing:
-        print(f"  [INFO] You have already enrolled '{existing['gym_name']}'.")
-        print(f"         Status: {'Approved' if existing['is_approved'] else 'Pending Approval'}")
+        if existing['is_approved']:
+            print(f"  [INFO] You have successfully enrolled '{existing['gym_name']}'.")
+            print("         Status: Approved")
+        elif existing['is_active'] == 0:
+            print(f"  [INFO] Your enrollment application for '{existing['gym_name']}' was Rejected.")
+            print("         Status: Rejected")
+        else:
+            print(f"  [INFO] You have already submitted an enrollment for '{existing['gym_name']}'.")
+            print("         Status: Pending Approval")
         pause()
         return
 
@@ -116,7 +120,7 @@ def enroll_gym():
     )
     if gym_id:
         print(f"\n  [SUCCESS] Gym '{gym_name}' enrolled with ID: {gym_id}")
-        print("  Awaiting admin approval.")
+        print("  `Awaiting admin approval.`")
     else:
         print("  [ERROR] Enrollment failed.")
     pause()

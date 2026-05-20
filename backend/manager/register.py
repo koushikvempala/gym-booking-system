@@ -6,8 +6,8 @@ from common.validations import (
 )
 from database.queries import get_user_by_username, get_user_by_email, create_user
 
-def customer_register():
-    print_header("CUSTOMER REGISTRATION")
+def manager_register():
+    print_header("MANAGER REGISTRATION")
 
     while True:
         username = input("  Choose a Username: ").strip()
@@ -48,9 +48,9 @@ def customer_register():
         break
 
     password_hash = hash_password(password)
-    uid = create_user(username, password_hash, full_name, email, phone, "customer")
+    uid = create_user(username, password_hash, full_name, email, phone, "manager")
     if uid:
-        print(f"\n  [SUCCESS] Account created! Welcome, {full_name}.")
+        print(f"\n  [SUCCESS] Manager Account created! Welcome, {full_name}.")
         print("  You can now login with your username and password.")
     else:
         print("  [ERROR] Registration failed.")

@@ -36,13 +36,13 @@ def admin_add_manager():
 
     # Phone
     while True:
-        phone = input("  Enter phone (10 digits): ").strip()
+        phone = input("  Enter phone: ").strip()
         if is_valid_phone(phone):
             break
 
     # Password
     while True:
-        password = input("  Enter password (min 6 chars): ").strip()
+        password = input("  Enter password: ").strip()
         if is_valid_password(password):
             break
 

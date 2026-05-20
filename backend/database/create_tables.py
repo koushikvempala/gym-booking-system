@@ -169,7 +169,7 @@ TABLES = [
         membership_cost REAL    NOT NULL,
         trainer_cost    REAL    NOT NULL DEFAULT 0,
         total_amount    REAL    NOT NULL,
-        payment_method  TEXT    NOT NULL DEFAULT 'cash',
+        payment_method  TEXT    NOT NULL DEFAULT 'card',
         payment_status  TEXT    NOT NULL DEFAULT 'paid',
         paid_at         TEXT    NOT NULL DEFAULT (datetime('now')),
         FOREIGN KEY (booking_id) REFERENCES bookings(id),
